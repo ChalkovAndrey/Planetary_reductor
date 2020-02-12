@@ -1,0 +1,15 @@
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.exe.config
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.exe
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.pdb
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csprojAssemblyReference.cache
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\MainWindow.g.cs
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\App.g.cs
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT_MarkupCompile.cache
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT_MarkupCompile.lref
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\MainWindow.baml
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.g.resources
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.Properties.Resources.resources
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.GenerateResource.cache
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.CoreCompileInputs.cache
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.exe
+D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.pdb
