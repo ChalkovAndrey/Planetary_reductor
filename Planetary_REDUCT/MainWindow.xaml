@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Planetary_REDUCT"
+        xmlns:uc="Planetary_REDUCT.StartPageControl"
         mc:Ignorable="d"
         Title="Расчет планетарных и волновых редукторов 2.0" Height="560" Width="905">
     <Grid>
@@ -14,8 +15,15 @@
                         <TextBlock Margin="3">Главная</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <local:StartPageControl  />
+                        
+                    </StackPanel>
+                </TabItem.Content>
+                
             </TabItem>
-            <TabItem x:Name="opisalgor">
+            <TabItem x:Name="opisalgor"> 
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="3">Описание алгоритмов</TextBlock>

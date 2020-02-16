@@ -16,15 +16,14 @@ using System.Windows.Shapes;
 namespace Planetary_REDUCT
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для StartPageControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartPageControl : UserControl
     {
-        public MainWindow()
+        public StartPageControl()
         {
             InitializeComponent();
-            
-            
+           
         }
     }
 }
