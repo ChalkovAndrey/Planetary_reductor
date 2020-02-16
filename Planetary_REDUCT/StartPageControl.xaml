@@ -6,27 +6,41 @@
              xmlns:local="clr-namespace:Planetary_REDUCT"
              
              mc:Ignorable="d" 
-             d:DesignHeight="560" d:DesignWidth="920">
+             d:DesignHeight="560" d:DesignWidth="905">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
 
 
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
 
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
            
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-
-       <Image Name="ImReductor" Grid.Row="2" Grid.Column="0" Stretch="Uniform"  Source="Images/Reductor.jpg" ></Image>
-       
-       
+        <TextBlock Text="Название программы" FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center"/>
+        <Image Name="ImReductor" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Stretch="Uniform"  Source="Images/Reductor.jpg" ></Image>
+        <TextBlock Text="Выберите тип редуктора" FontSize="20" Grid.Row="1"  Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Grid Grid.Row="2" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition  Width="auto"/>
+                <ColumnDefinition  Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="PlanetaryBut" Grid.Row="0" Width="auto" Grid.Column="1" Content="Планетарный редуктор" Click="PlanetaryClick"></Button>
+            <Button x:Name="WavesBut" Grid.Row="2" Width="auto" Grid.Column="1" Content="Волновой редуктор"></Button>
+        </Grid>
            
 
     </Grid>

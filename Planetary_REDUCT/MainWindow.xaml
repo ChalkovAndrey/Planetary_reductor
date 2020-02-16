@@ -16,10 +16,10 @@
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <StackPanel>
+                    
                         <local:StartPageControl  />
                         
-                    </StackPanel>
+                    
                 </TabItem.Content>
                 
             </TabItem>

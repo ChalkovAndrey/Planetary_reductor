@@ -25,5 +25,9 @@ namespace Planetary_REDUCT
             InitializeComponent();
            
         }
+        private void PlanetaryClick (Object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+        }
     }
 }
