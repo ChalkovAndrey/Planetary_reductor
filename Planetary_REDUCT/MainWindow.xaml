@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Planetary_REDUCT"
         xmlns:uc="Planetary_REDUCT.StartPageControl"
         mc:Ignorable="d"
-        Title="Расчет планетарных и волновых редукторов 2.0" Height="560" Width="905">
+        Title="Расчет планетарных и волновых редукторов 2.0" Height="560" Width="905" >
     <Grid>
-        <TabControl x:Name="mainmeniy">
+        <TabControl x:Name="mainmeniy" >
             <TabItem x:Name="glavnaya">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -16,10 +16,12 @@
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
-                    
-                        <local:StartPageControl  />
-                        
-                    
+                    <Grid>
+                    <local:StartPageControl x:Name="StartPage"  />
+                        <local:PlanetaryPage    x:Name="PlanetaryPage" Visibility="Collapsed" Grid.ColumnSpan="3" Grid.RowSpan="3" />
+                    </Grid>
+
+
                 </TabItem.Content>
                 
             </TabItem>
