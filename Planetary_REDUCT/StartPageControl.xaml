@@ -4,10 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Planetary_REDUCT"
-             
+            
              mc:Ignorable="d" 
              d:DesignHeight="560" d:DesignWidth="905">
-    <Grid ShowGridLines="True">
+    <Grid ShowGridLines="True" >
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
 
@@ -22,7 +23,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+       
         <TextBlock Text="Название программы" FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center"/>
         <Image Name="ImReductor" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Stretch="Uniform"  Source="Images/Reductor.jpg" ></Image>
         <TextBlock Text="Выберите тип редуктора" FontSize="20" Grid.Row="1"  Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
