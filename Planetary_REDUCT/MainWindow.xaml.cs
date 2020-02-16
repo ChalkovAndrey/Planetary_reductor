@@ -32,9 +32,12 @@ namespace Planetary_REDUCT
         
         public void PlanetaryCall()
         {
-            contr.Visibility = Visibility.Visible;
+            PlanetaryPage.Visibility = Visibility.Visible;
         }
-      
+        public void StartPageCall()
+        {
+            StartPage.Visibility = Visibility.Visible;
+        }
 
     }
 }

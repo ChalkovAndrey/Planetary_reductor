@@ -17,8 +17,8 @@
                 </TabItem.Header>
                 <TabItem.Content>
                     <Grid>
-                    <local:StartPageControl  />
-                        <local:PlanetaryPage    x:Name="contr" Visibility="Collapsed" Grid.ColumnSpan="3" Grid.RowSpan="3" />
+                    <local:StartPageControl x:Name="StartPage"  />
+                        <local:PlanetaryPage    x:Name="PlanetaryPage" Visibility="Collapsed" Grid.ColumnSpan="3" Grid.RowSpan="3" />
                     </Grid>
 
 

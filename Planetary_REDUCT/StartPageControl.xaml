@@ -7,7 +7,7 @@
             
              mc:Ignorable="d" 
              d:DesignHeight="560" d:DesignWidth="905">
-    <Grid ShowGridLines="True" >
+    <Grid  >
         
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -39,7 +39,7 @@
                 <ColumnDefinition  Width="auto"/>
                 <ColumnDefinition  Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="PlanetaryBut" Grid.Row="0" Width="auto" Grid.Column="1" Content="Планетарный редуктор" Click="PlanetaryClick"></Button>
+            <Button x:Name="PlanetaryBut" Grid.Row="0" Width="auto" Grid.Column="1" Content="Планетарный редуктор" Click="PlanetaryCallClick"></Button>
             <Button x:Name="WavesBut" Grid.Row="2" Width="auto" Grid.Column="1" Content="Волновой редуктор"></Button>
         </Grid>
            

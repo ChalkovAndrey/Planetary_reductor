@@ -20,9 +20,16 @@ namespace Planetary_REDUCT
     /// </summary>
     public partial class PlanetaryPage : UserControl
     {
+        public delegate void MainFunctions();
+        public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         public PlanetaryPage()
         {
             InitializeComponent();
+        }
+       void StartPageClick (Object sender,EventArgs e)
+        {
+            Visibility = Visibility.Collapsed;
+            mainWindow.StartPageCall();
         }
     }
 }

@@ -31,11 +31,10 @@ namespace Planetary_REDUCT
            
         }
       
-        private void PlanetaryClick (Object sender, RoutedEventArgs e)
+        private void PlanetaryCallClick (Object sender, RoutedEventArgs e)
         {
             Visibility = Visibility.Collapsed;
-            MainFunctions callPlanetary = mainWindow.PlanetaryCall;
-            callPlanetary();
+            mainWindow.PlanetaryCall();
             
 
             
