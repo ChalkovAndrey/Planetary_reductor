@@ -16,28 +16,20 @@ using System.Windows.Shapes;
 namespace Planetary_REDUCT
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для PlanetaryPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PlanetaryPage : UserControl
     {
-        StartPageControl a;
-       
-        public MainWindow()
+        public delegate void MainFunctions();
+        public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+        public PlanetaryPage()
         {
             InitializeComponent();
-            
-            
-            
         }
-        
-        public void PlanetaryCall()
+       void StartPageClick (Object sender,EventArgs e)
         {
-            PlanetaryPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Collapsed;
+            mainWindow.StartPageCall();
         }
-        public void StartPageCall()
-        {
-            StartPage.Visibility = Visibility.Visible;
-        }
-
     }
 }
