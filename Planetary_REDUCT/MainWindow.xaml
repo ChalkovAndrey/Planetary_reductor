@@ -7,13 +7,17 @@
         mc:Ignorable="d"
         Title="Расчет планетарных и волновых редукторов 2.0" Height="560" Width="905">
     <Grid>
-        <TabControl x:Name="mainmeniy">
+
+        <TabControl x:Name="mainmeniy" HorizontalAlignment="Stretch" Background="WhiteSmoke">
             <TabItem x:Name="glavnaya">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="3">Главная</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid>
+                      
+                </Grid>
             </TabItem>
             <TabItem x:Name="opisalgor">
                     <TabItem.Header>
@@ -21,13 +25,19 @@
                         <TextBlock Margin="3">Описание алгоритмов</TextBlock>
                     </StackPanel>
                     </TabItem.Header>
+                <Grid>
+                    
+                </Grid>
                 </TabItem>
-            <TabItem x:Name="opismatmod">
+            <TabItem x:Name="opismatmod" >
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="3">Описание матмодели</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid>
+                    
+                </Grid>
             </TabItem>
             <TabItem x:Name="opisprogr">
                 <TabItem.Header>
@@ -35,6 +45,9 @@
                         <TextBlock Margin="3">Описание программы</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid>
+                    
+                </Grid>
             </TabItem>
             <TabItem x:Name="rucovodpolz">
                 <TabItem.Header>
@@ -42,6 +55,9 @@
                         <TextBlock Margin="3">Руководство пользователя</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid>
+                    
+                </Grid>
             </TabItem>
             <TabItem x:Name="developers">
                 <TabItem.Header>
@@ -52,5 +68,10 @@
             </TabItem>
 
         </TabControl>
+    
+        
     </Grid>
+   
+       
+    
 </Window>
