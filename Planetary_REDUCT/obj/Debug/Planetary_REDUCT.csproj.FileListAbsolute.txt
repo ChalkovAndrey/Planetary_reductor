@@ -13,3 +13,22 @@ D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planeta
 D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.CoreCompileInputs.cache
 D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.exe
 D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.pdb
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.exe.config
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.exe
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.pdb
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\MainWindow.g.cs
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\StartPageControl.g.cs
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\App.g.cs
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT_MarkupCompile.cache
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT_MarkupCompile.lref
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\MainWindow.baml
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\StartPageControl.baml
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.g.resources
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.Properties.Resources.resources
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.GenerateResource.cache
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.exe
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.pdb
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csprojAssemblyReference.cache
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\PlanetaryPage.g.cs
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\PlanetaryPage.baml
