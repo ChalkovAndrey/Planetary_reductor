@@ -8,23 +8,17 @@
         mc:Ignorable="d"
         Title="Расчет планетарных и волновых редукторов 2.0" Height="560" Width="905" >
     <Grid>
-<<<<<<< HEAD
+
 
         <TabControl x:Name="mainmeniy" HorizontalAlignment="Stretch" Background="WhiteSmoke">
-=======
-        <TabControl x:Name="mainmeniy" >
->>>>>>> 4f1f68d87ca9938b00b39b13b8eca51d185c6e05
+
             <TabItem x:Name="glavnaya">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="3">Главная</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-<<<<<<< HEAD
-                <Grid>
-                      
-                </Grid>
-=======
+
                 <TabItem.Content>
                     <Grid>
                     <local:StartPageControl x:Name="StartPage"  />
@@ -34,7 +28,7 @@
 
                 </TabItem.Content>
                 
->>>>>>> 4f1f68d87ca9938b00b39b13b8eca51d185c6e05
+
             </TabItem>
             <TabItem x:Name="opisalgor"> 
                     <TabItem.Header>

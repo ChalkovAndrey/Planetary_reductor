@@ -55,16 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-<<<<<<< HEAD
+
     <Compile Include="raschet.cs" />
-=======
+
     <Compile Include="PlanetaryPage.xaml.cs">
       <DependentUpon>PlanetaryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartPageControl.xaml.cs">
       <DependentUpon>StartPageControl.xaml</DependentUpon>
     </Compile>
->>>>>>> 4f1f68d87ca9938b00b39b13b8eca51d185c6e05
+
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
