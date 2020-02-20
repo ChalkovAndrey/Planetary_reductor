@@ -248,7 +248,8 @@ namespace Planetary_REDUCT
             double dfr = 1.1 * Dr;//локальная переменная диаметра подшипника из соображений габаритов
             if (dfp >= dfr) dfpp = dfp; else dfpp = dfr;//определение проектного значения диаметра гибкого подшипника
             //double sm;
-            
+           // ngpp = 0;
+
             for(int n = No; n < Nk; n++)
             {
                 //double sm;
