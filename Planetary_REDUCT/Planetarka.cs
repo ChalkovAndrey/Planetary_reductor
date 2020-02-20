@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Class1
+public class Planet
 {   //-------------------------------РАССЧИТЫВАЕТСЯ МЕТОДАМИ---------------------------------------------------
     private int Za, Zb, Zg, Zf, N; // Z1 - число зубьев солнечного, Z2 - число зубьев сателлита
                                    //Z3 - число зубьев короны, N - число сателлитов, m - модуль ступени
@@ -18,7 +18,7 @@ public class Class1
 
 //------------------------------------СЕРВИСНЫЕ ПЕРЕМЕННЫЕ (ИСПОЛЬЗУЮТСЯ ТОЛЬКО В РАСЧЕТЕ------------------------
     private int IP, KA, KG, KF, KB, NW, JPR, MPR; // JPR, MPR - индикаторы
-    private double DA, DG, AW1, DR1, DB, DR2, AW2, DR, AW, Uvr, DUR, Y, YD=1, D1, D2, Df, ALF, HAZ, CZ;
+    private double Da,Db, Dg, Df, DR1, DR2, DR, AW, Uvr, Y, YD=1, D1, D2, ALF, HAZ, CZ;
 
     private int KPZ; // Управляющий признак, вводится(определяется по картинке в интерфейсе
 
@@ -26,6 +26,9 @@ public class Class1
 //YD=1 - допущение (в большинстве случаев)
     private void SVZ1(double SM, int LH)
     {
+
+ // Определение угла зацепления и осевого зазора
+
         ALF = Math.PI / 9;
         if (LH < 0) { HAZ = 1; } else HAZ = 1.1;
         if (SM - 0.5 <= 0) { CZ = 0.5; }
@@ -35,8 +38,11 @@ public class Class1
         }
     }
 
+    // Условие сборки
 
     private void SV1(int K, int N) { if ((K % N) == 0) JPR = 0; else JPR = 1; }
+
+    // Проверка отсутствия интерференции
 
     private void SV2(int K1, int K2)
     {
@@ -56,6 +62,8 @@ public class Class1
     private void SV6(double AW1, double AW2, double SM1)
     {
 
+       // Вычисление суммарного смещения
+
         Y = (AW2 - AW1) / SM1;
         if (Y < 0) { IP = 4; return; } ;    
         if (Y == 0) { IP = 2; return;};    
@@ -66,6 +74,10 @@ public class Class1
 
     private void SV15(int KPZ, int K1, int K2, double SM)
     {
+
+        // Проверка возможности реализации механизма при заданных числах зубов, модулях
+        // и расчет геометрических параметров передачи
+
         double Ulok, C;
        // ALF = 20;
         //HAZ = 1;
@@ -147,15 +159,110 @@ public class Class1
 
     }
 
-    private void
-
-    public void construction()
+    private void SV16(int NW)
     {
+        // Определение числа зубьев второго сателлита и проверка
+        //возможности реализации при такой конфигурации
+
+        Zf = Za + Zb;
+        SV1(Zf, NW);
+    
+    }
+
+    private void SV17()
+    {
+
+        // Проверка по условию...
+
+        int LC; int LB; int p;
+        LC = Zg * Zb + Za * Zf;
+        LB = Zg * NW;
+        if ((LC % LB) == 0) p = 0; else p = 1;// ВМЕСТО SV1(LC, LB, p);
+        IP = p;
+    }
+
+    private void SV18()
+    {
+
+        // Расчет числа зубов короны
+
+        double ZB; int ZBI;
+        ZB = (M1 * (Za + Zg) + m2 * Zf) / M2;
+        ZBI = (int)Math.Round(ZB, 0);
+        if ((ZB - ZBI) == 0) Zb = ZBI; else Zb = ZBI + 1;
+    }
+
+    public void ZTMM46()
+    {
+        // Заполнение всех полей
+
+        for (NW = Nmin; NW < Nmax; NW++)//200
+        {
+            double X = Math.Sin(Math.PI / NW);
+            for (Za= zAmin; Za < zAmax; Za++)//100
+            {
+                for (Zg = zGmin; Zg < zGmax; Zg++)//80
+                {
+                    if (((Za + Zg) * X - Zg - 7) < 0) break; // then goto 80
+                    else
+                    {
+                        SV15(2, Za, Zg, M1);
+                        if (IP == 1) break;// then goto 100;
+                        if (IP == 3) break;// goto 80
+                        Da = D1;
+                        Dg = D2;
+                        Aw1 = AW;
+                        DR1 = DR;
+
+                        for (Zf = zFmin; Zf < zFmax; Zf++)
+                        {
+                            if (((Za + Zg) * X - (M2 / M1) * (Zf + 2) - 5) < 0) break;//!!!!!!!!? goto 80
+                            //Zb = (int)Math.Round((Zf + (M1 / M2) * (Za + Zg)));
+                            SV18();
+                            SV15(3, Zf, Zb, M2);
+                            Df = D1;
+                            Db = D2;
+                            Aw2 = AW;
+                            DR2 = DR;
+
+                            if (IP == 1) break;    // then goto 50;
+                            if (IP == 3) break;    // then goto 80;
+                            Uvr = 1 + Zg * Zb / (Za * Zf);
+                            DU = (UT - Uvr) * 100 / UT;
+                            if ((du - Math.Abs(DU)) < 0) break;
+                            SV6(Aw1,Aw2,M1);             //    SV6 (YD, AW1, AW2, 1, Y, IP);
+                            if ((IP - 2) > 0) break;// then goto 50;
+                            if (Y == 0)
+                            {
+                                if ((DR1 - DR2) > 0) { A = DR1; }
+                                else
+                                {
+                                    A = DR2;
+                                    SV17();
+                                }
+                            };
+                            DR1 = 2 * Aw2 + Dg;
+                            if ((DR1 - ag) > 0) break;
+                            if ((DR1 - DR2) > 0) A = DR1; else A = DR2;
+                            SV17();
+
+
+                        }//50
+                    }//end else
+
+                    if (IP == 3) break;
+                    if ((DR1 - ag) > 0) break;
+                }//80
+                if (IP == 1) break;
+            }//100
+            if (IP == 1) break;
+        }//200
 
     }
 
 
-    public Class1()
+    public Planet()
 	{
+
 	}
 }
