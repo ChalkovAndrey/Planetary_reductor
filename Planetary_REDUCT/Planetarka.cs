@@ -2,16 +2,28 @@
 
 public class Planet
 {   //-------------------------------РАССЧИТЫВАЕТСЯ МЕТОДАМИ---------------------------------------------------
-    private int Za, Zb, Zg, Zf, N; // Z1 - число зубьев солнечного, Z2 - число зубьев сателлита
+    public int Za, Zb, Zg, Zf, N; // Z1 - число зубьев солнечного, Z2 - число зубьев сателлита
                                    //Z3 - число зубьев короны, N - число сателлитов, m - модуль ступени
                                    // U - передаточное отношение
-    private double U, M1, M2, Aw1, Aw2, DU, A; // U - передаточное отношение редуктора, 
+    private double U, Aw1, Aw2, A; // U - передаточное отношение редуктора, 
                                                //M1 - модуль первой ступени,  M2 - модуль второй ступени 
 
-        
- //-----------------------------------------ВВОДИТСЯ ИЗ ИНТЕРФЕЙСА-----------------------------------------
-    private int zAmin, zAmax, zGmin, zGmax, zFmin, zFmax, Nmin, Nmax; // Nmin, Nmax - диапазон чисел сателлитов
-    private double UT, du, ag; //UT - требуемое передаточное отношение, du - требуемая погрешность, ag - требуемый габарит
+
+    //-----------------------------------------ВВОДИТСЯ ИЗ ИНТЕРФЕЙСА-----------------------------------------
+    public int ZaMin { get; set; }
+    public int ZaMax { get; set; }
+    public int ZgMin { get; set; }
+    public int ZgMax { get; set; }
+    public int ZfMin { get; set; }
+    public int ZfMax { get; set; }
+    public int NMin { get; set; }
+    public int NMax { get; set; }
+    public int M1 { get; set; }
+    public int M2{ get; set; }
+    public double du { get; set; }
+    public double UT { get; set; }
+    public double ag { get; set; }
+    private double DU; //UT - требуемое передаточное отношение, du - требуемая погрешность, ag - требуемый габарит
     private int LTR1, LTR2; // Маркеры для ответвления в расчетах
                             //-----------------------------------------------------------------------------------------------------------
 
@@ -187,7 +199,7 @@ public class Planet
         // Расчет числа зубов короны
 
         double ZB; int ZBI;
-        ZB = (M1 * (Za + Zg) + m2 * Zf) / M2;
+        ZB = (M1 * (Za + Zg) + M2 * Zf) / M2;
         ZBI = (int)Math.Round(ZB, 0);
         if ((ZB - ZBI) == 0) Zb = ZBI; else Zb = ZBI + 1;
     }
@@ -196,14 +208,16 @@ public class Planet
     {
         // Заполнение всех полей
 
-        for (NW = Nmin; NW < Nmax; NW++)//200
+        for (NW = NMin; NW < NMax; NW++)//200
         {
             double X = Math.Sin(Math.PI / NW);
-            for (Za= zAmin; Za < zAmax; Za++)//100
+            double a = (Za + Zg) * X;
+            double b = Za * X;
+            for (Za = ZaMin; Za < ZaMax; Za++)//100
             {
-                for (Zg = zGmin; Zg < zGmax; Zg++)//80
+                for (Zg = ZgMin; Zg < ZgMax; Zg++)//80
                 {
-                    if (((Za + Zg) * X - Zg - 7) < 0) break; // then goto 80
+                    if ((((Za + Zg) * X) - Zg - 7) < 0) break; // then goto 80
                     else
                     {
                         SV15(2, Za, Zg, M1);
@@ -214,7 +228,7 @@ public class Planet
                         Aw1 = AW;
                         DR1 = DR;
 
-                        for (Zf = zFmin; Zf < zFmax; Zf++)
+                        for (Zf = ZfMin; Zf < ZfMax; Zf++)
                         {
                             if (((Za + Zg) * X - (M2 / M1) * (Zf + 2) - 5) < 0) break;//!!!!!!!!? goto 80
                             //Zb = (int)Math.Round((Zf + (M1 / M2) * (Za + Zg)));
@@ -230,7 +244,7 @@ public class Planet
                             Uvr = 1 + Zg * Zb / (Za * Zf);
                             DU = (UT - Uvr) * 100 / UT;
                             if ((du - Math.Abs(DU)) < 0) break;
-                            SV6(Aw1,Aw2,M1);             //    SV6 (YD, AW1, AW2, 1, Y, IP);
+                            SV6(Aw1, Aw2, M1);             //    SV6 (YD, AW1, AW2, 1, Y, IP);
                             if ((IP - 2) > 0) break;// then goto 50;
                             if (Y == 0)
                             {
@@ -247,7 +261,7 @@ public class Planet
                             SV17();
 
 
-                        }//50
+                        }//50   
                     }//end else
 
                     if (IP == 3) break;
@@ -257,7 +271,7 @@ public class Planet
             }//100
             if (IP == 1) break;
         }//200
-
+        N = NW;
     }
 
 

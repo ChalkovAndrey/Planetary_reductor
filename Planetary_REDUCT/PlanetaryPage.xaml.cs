@@ -21,12 +21,12 @@ namespace Planetary_REDUCT
     public partial class PlanetaryPage : UserControl
     {
         public delegate void MainFunctions();
-        Test test { get;set; }
+        Planet test { get;set; }
         public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         public PlanetaryPage()
         {
             InitializeComponent();
-            test = new Test()
+            test = new Planet()
             {
                
             };
@@ -40,14 +40,13 @@ namespace Planetary_REDUCT
         }
         public void CalculatingClick(Object sender,EventArgs e)
         {
-           
-            Zymin.Text = test.test1;
-            
+            MessageBox.Show(test.ZaMin.ToString());
+            test.ZTMM46();
+            MessageBox.Show("Za = "+test.Za.ToString() +" Zb = "+test.Zb.ToString() + " /n Zg = "+test.Zg.ToString() +" Zf = "+ test.Zf.ToString() + " N = " + test.N.ToString());
+
+
+
         }
     }
-    class Test
-    {
-        public string test1 { get; set; }
-        public string test2;
-    }
+   
 }
