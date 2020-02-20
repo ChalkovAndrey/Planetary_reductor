@@ -21,15 +21,33 @@ namespace Planetary_REDUCT
     public partial class PlanetaryPage : UserControl
     {
         public delegate void MainFunctions();
+        Test test { get;set; }
         public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         public PlanetaryPage()
         {
             InitializeComponent();
+            test = new Test()
+            {
+               
+            };
+           
+            this.DataContext = test;
         }
        void StartPageClick (Object sender,EventArgs e)
         {
             Visibility = Visibility.Collapsed;
             mainWindow.StartPageCall();
         }
+        public void CalculatingClick(Object sender,EventArgs e)
+        {
+           
+            Zymin.Text = test.test1;
+            
+        }
+    }
+    class Test
+    {
+        public string test1 { get; set; }
+        public string test2;
     }
 }
