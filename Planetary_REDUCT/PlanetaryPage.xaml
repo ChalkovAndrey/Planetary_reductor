@@ -35,40 +35,39 @@
             <LineBreak/>
            и выносливость"</TextBlock>
         <ComboBox Grid.Row="1" Grid.Column="4" Height="30" ></ComboBox>
-        <Label Grid.Row="2" Grid.Column="1" Content="Zamin" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="3" Grid.Column="1" Content="Zymin" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="4" Grid.Column="1" Content="Zfmin" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="5" Grid.Column="1" Content="nmin" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Content="ZaMin" VerticalAlignment="Center" ></Label>
+        <Label Grid.Row="3" Grid.Column="1" Content="ZgMin" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="4" Grid.Column="1" Content="ZfMin" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="5" Grid.Column="1" Content="Nmin" VerticalAlignment="Center"></Label>
         <Label Grid.Row="6" Grid.Column="1" Content="M1" VerticalAlignment="Center"></Label>
         <Label Grid.Row="7" Grid.Column="1" Content="U" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="2" Grid.Column="3" Content="Zamax" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="3" Grid.Column="3" Content="Zymax" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="4" Grid.Column="3" Content="Zfmax" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="5" Grid.Column="3" Content="nmax" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="2" Grid.Column="3" Content="ZaMax" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="3" Grid.Column="3" Content="ZyMax" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="4" Grid.Column="3" Content="ZfMax" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="5" Grid.Column="3" Content="NMax" VerticalAlignment="Center"></Label>
         <Label Grid.Row="6" Grid.Column="3" Content="M2" VerticalAlignment="Center"></Label>
         <Label Grid.Row="7" Grid.Column="3" Content="DU" VerticalAlignment="Center"></Label>
         <Label Grid.Row="8" Grid.Column="1" Content="AG" VerticalAlignment="Center"></Label>
 
-        <TextBox Grid.Row="2" Grid.Column="2" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="2" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="2" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="2" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="2" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="7" Grid.Column="2" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="8" Grid.Column="2" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="2" Grid.Column="4" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="4" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="4" Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="4"  Width="100" Height="30" ></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="4"  Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="4"  Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="4"  Width="100" Height="30"></TextBox>
-        <TextBox Grid.Row="7" Grid.Column="4"  Width="100" Height="30"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="Zamin" Width="100" Height="30" Text="{Binding Path=ZaMin, Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="2" x:Name="Zgmin" Width="100" Height="30" Text="{Binding Path= ZgMin,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="2" x:Name="Zfmin" Width="100" Height="30" Text="{Binding Path=ZfMin,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="2" x:Name="Nmin" Width="100" Height="30" Text="{Binding Path=NMin,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="6" Grid.Column="2" x:Name="m1" Width="100" Height="30" Text="{Binding Path=M1,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="7" Grid.Column="2" x:Name="u" Width="100" Height="30" Text="{Binding Path=UT,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="8" Grid.Column="2" x:Name="ag" Width="100" Height="30" Text="{Binding Path=ag, Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="4" x:Name="Zamax"  Width="100" Height="30" Text="{Binding Path=ZaMax,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="4"  x:Name="Zymax" Width="100" Height="30" Text="{Binding Path=ZgMax,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="4" x:Name="Zfmax" Width="100" Height="30" Text="{Binding Path=ZfMax,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="4" x:Name="Nmax"  Width="100" Height="30" Text="{Binding Path=NMax,Mode=TwoWay}" ></TextBox>
+        <TextBox Grid.Row="6" Grid.Column="4" x:Name="m2"  Width="100" Height="30" Text="{Binding Path=M2,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="7" Grid.Column="4" x:Name="DU" Width="100" Height="30" Text="{Binding Path=du,Mode=TwoWay}"></TextBox>
+       
         <Canvas Grid.Row="5" Grid.RowSpan="5"  Grid.Column="6">
             <Button   HorizontalAlignment="Center" Width="100"
                     Height="30" Margin="20" Content="Очистить" Canvas.Top="50" Canvas.Right="100"/>
             <Button HorizontalAlignment="Center" Width="100" 
-                    Height="30" Margin="20" Content="Рассчитать" Canvas.Top="100" Canvas.Right="160"/>
+                    Height="30" Margin="20" Content="Рассчитать" Canvas.Top="100" Canvas.Right="160" Click="CalculatingClick" />
             <Button HorizontalAlignment="Center" Width="100"
                     Height="30" Margin="20" Canvas.Top="50" Canvas.Left="100" Content="Пример данных"/>
             <Button HorizontalAlignment="Center" Width="auto" Click="StartPageClick"
