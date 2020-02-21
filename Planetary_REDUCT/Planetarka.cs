@@ -220,7 +220,7 @@ public class Planet
                     if ((((Za + Zg) * X) - Zg - 7) < 0) break; // then goto 80
                     else
                     {
-                        SV15(2, Za, Zg, M1);
+                        SV15(1, Za, Zg, M1);
                         if (IP == 1) break;// then goto 100;
                         if (IP == 3) break;// goto 80
                         Da = D1;

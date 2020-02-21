@@ -38,13 +38,13 @@ namespace Planetary_REDUCT
             Visibility = Visibility.Collapsed;
             mainWindow.StartPageCall();
         }
-        public void CalculatingClick(Object sender,EventArgs e)
+        public void CalculatingClick(Object sender, EventArgs e)
         {
             MessageBox.Show(test.ZaMin.ToString());
             test.ZTMM46();
-            MessageBox.Show("Za = "+test.Za.ToString() +" Zb = "+test.Zb.ToString() + " /n Zg = "+test.Zg.ToString() +" Zf = "+ test.Zf.ToString() + " N = " + test.N.ToString());
-
-
+            MessageBox.Show("Za = " + test.Za.ToString() + " Zb = " + test.Zb.ToString() + " /n Zg = " + test.Zg.ToString() + " Zf = " + test.Zf.ToString() + " N = " + test.N.ToString());
+            test = new Planet();
+            this.DataContext = test;
 
         }
     }
