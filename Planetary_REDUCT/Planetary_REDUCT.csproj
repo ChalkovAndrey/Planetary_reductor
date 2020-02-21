@@ -64,6 +64,9 @@
       <DependentUpon>StartPageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wave.cs" />
+    <Compile Include="WavePage.xaml.cs">
+      <DependentUpon>WavePage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StartPageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WavePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

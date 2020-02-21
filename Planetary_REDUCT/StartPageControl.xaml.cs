@@ -39,6 +39,11 @@ namespace Planetary_REDUCT
 
             
         }
+        private void WaveCallClick (Object sender,RoutedEventArgs e)
+        {
+            Visibility = Visibility.Collapsed;
+            mainWindow.WaveCall();
+        }
         
     }
 }

@@ -21,7 +21,8 @@
 
                 <TabItem.Content>
                     <Grid>
-                    <local:StartPageControl x:Name="StartPage"  />
+                        <local:WavePage x:Name="WavePage" Visibility="Collapsed"/>
+                        <local:StartPageControl x:Name="StartPage"  />
                         <local:PlanetaryPage    x:Name="PlanetaryPage" Visibility="Collapsed" Grid.ColumnSpan="3" Grid.RowSpan="3" />
                     </Grid>
 
