@@ -20,7 +20,7 @@ namespace Planetary_REDUCT
     /// </summary>
     public partial class MainWindow : Window
     {
-        StartPageControl a;
+        
        
         public MainWindow()
         {
@@ -38,6 +38,7 @@ namespace Planetary_REDUCT
         {
             StartPage.Visibility = Visibility.Visible;
         }
+        
 
     }
 }
