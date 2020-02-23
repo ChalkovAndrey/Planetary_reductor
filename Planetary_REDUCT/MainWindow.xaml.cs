@@ -38,6 +38,10 @@ namespace Planetary_REDUCT
         {
             StartPage.Visibility = Visibility.Visible;
         }
+        public void WaveCall()
+        {
+            WavePage.Visibility = Visibility.Visible;
+        }
         
 
     }
