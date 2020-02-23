@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Planetary_REDUCT.OutScreenPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Planetary_REDUCT"
+             mc:Ignorable="d" 
+             d:DesignHeight="560" d:DesignWidth="905">
+    <Grid Background="Lavender">
+        <DataGrid x:Name="ResultGrid" AutoGenerateColumns="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Параметр"/>
+                <DataGridTextColumn Header="Значение"></DataGridTextColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
