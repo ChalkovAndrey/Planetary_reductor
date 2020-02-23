@@ -40,7 +40,7 @@
                 <ColumnDefinition  Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="PlanetaryBut" Grid.Row="0" Width="auto" Grid.Column="1" Content="Планетарный редуктор" Click="PlanetaryCallClick"></Button>
-            <Button x:Name="WavesBut" Grid.Row="2" Width="auto" Grid.Column="1" Content="Волновой редуктор"></Button>
+            <Button x:Name="WavesBut" Grid.Row="2" Width="auto" Grid.Column="1" Content="Волновой редуктор" Click="WaveCallClick"></Button>
         </Grid>
            
 

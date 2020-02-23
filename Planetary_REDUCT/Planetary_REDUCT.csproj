@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="OutScreenPage.xaml.cs">
+      <DependentUpon>OutScreenPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Planetarka.cs" />
     <Compile Include="raschet.cs" />
     <Compile Include="PlanetaryPage.xaml.cs">
@@ -64,6 +67,9 @@
       <DependentUpon>StartPageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wave.cs" />
+    <Compile Include="WavePage.xaml.cs">
+      <DependentUpon>WavePage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,11 +82,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OutScreenPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PlanetaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StartPageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WavePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

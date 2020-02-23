@@ -16,34 +16,27 @@ using System.Windows.Shapes;
 namespace Planetary_REDUCT
 {
     /// <summary>
-    /// Логика взаимодействия для StartPageControl.xaml
+    /// Логика взаимодействия для WavePage.xaml
     /// </summary>
-    public partial class StartPageControl : UserControl
+    public partial class WavePage : UserControl
     {
-        public delegate void MainFunctions();
+        Wave wave;
         public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-
-       
-        public StartPageControl()
+        public WavePage()
         {
             InitializeComponent();
-           
-           
+            wave = new Wave { };
+            this.DataContext = wave;
         }
-      
-        private void PlanetaryCallClick (Object sender, RoutedEventArgs e)
+       private void CalculatingClick(Object sender, RoutedEventArgs e)
+        {
+            wave.Construction();
+            MessageBox.Show("Zf =" +wave.Zf.ToString() + "Zc = " + wave.Zc.ToString() + "Ngp = " +wave.Ngp.ToString() + "Modul = " + wave.modulfc);
+        }
+        void StartPageClick(Object sender, EventArgs e)
         {
             Visibility = Visibility.Collapsed;
-            mainWindow.PlanetaryCall();
-            
-
-            
+            mainWindow.StartPageCall();
         }
-        private void WaveCallClick (Object sender,RoutedEventArgs e)
-        {
-            Visibility = Visibility.Collapsed;
-            mainWindow.WaveCall();
-        }
-        
     }
 }

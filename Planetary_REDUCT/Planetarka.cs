@@ -11,6 +11,7 @@ public class Planet
 
     //-----------------------------------------ВВОДИТСЯ ИЗ ИНТЕРФЕЙСА-----------------------------------------
     public int ZaMin { get; set; }
+    
     public int ZaMax { get; set; }
     public int ZgMin { get; set; }
     public int ZgMax { get; set; }
