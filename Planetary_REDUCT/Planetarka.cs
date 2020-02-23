@@ -18,8 +18,8 @@ public class Planet
     public int ZfMax { get; set; }
     public int NMin { get; set; }
     public int NMax { get; set; }
-    public int M1 { get; set; }
-    public int M2{ get; set; }
+    public double M1 { get; set; }
+    public double M2{ get; set; }
     public double du { get; set; }
     public double UT { get; set; }
     public double ag { get; set; }
@@ -72,10 +72,10 @@ public class Planet
             if (JPR == 0)
             {
                 SV1(K2, i);
-                if (JPR == 0) { MPR = 0; return; }
+                if (JPR == 0) { MPR = 0; return; } else { MPR = 1;return; }
             }
         }
-        MPR = 1;
+        //MPR = 1;
     }
 
 
@@ -85,9 +85,16 @@ public class Planet
        // Вычисление суммарного смещения
 
         Y = (AW2 - AW1) / SM1;
-        if (Y < 0) { IP = 4; return; } ;    
-        if (Y == 0) { IP = 2; return;};    
-        if ((Y - YD) > 0) IP = 4;                            
+        if (Y < 0) { IP = 4; return; } ;
+        if (Y == 0) { IP = 2; return;};
+        if (Y > 0)
+        {
+            if ((Y - YD) > 0) { IP = 4; return; }
+            else
+            {
+                IP = 2; return;
+            }
+        }                        
     }
 
 
@@ -113,48 +120,63 @@ public class Planet
         //--------------------------------------------------------------------------
         //----------Замена закомментированного ниже блока---------------------------
         //--------------------------------------------------------------------------
-        if (KPZ == 1) { if (!(Ulok - 6 <= 0)) { IP = 1; return; } };
+        if (KPZ == 1) { if (Ulok - 6> 0) { IP = 1; return; } };
         if (KPZ == 3)
         {
             C = ((K1 * K1) - 34) / (2 * K1 - 34);
             if ((K2 - C) < 0) { IP = 3; return; }
             else
-            { if (!((Ulok - 8) <= 0)) { IP = 1; return; } };
+            { if (Ulok - 8 > 0) { IP = 1; return; } };
             //goto 25;
         }//goto 3
         if ((KPZ == 2) || (KPZ == 4))
         {
-            if (1 - Ulok <= 0)
-            {
-                if (!(Ulok - 6 <= 0))
-                {
-                    IP = 1; return;
-                }
-            }
-            else { IP = 3; return;}
+           if (1 - Ulok > 0) { IP = 3; return; }
+           if (Ulok - 6 > 0) { IP = 1; return; }
         }
 
         //----------------------------------------------------------------------------------------------------------
         //
 
-        if (!(LTR1 <= 0))
+        if (LTR1>0)
         {
-            if (!((KPZ - 3) >= 0))
+            if (KPZ - 3 < 0)
             {
                 SV1(K1, NW);
                 if (JPR <= 0) { IP = 1; return; }
             }
-
             else
             {
                 SV1(K2, NW);
                 if (JPR <= 0) { IP = 3; return; }
-
             }
+
+ 
         }
 
+        if (LTR2 > 0)
+        {
+            SV2(K1,K2);
+            if (MPR <= 0) { IP = 3; return; }
+        }
+        SVZ1(SM,0);
+        D1 = SM * (K1 + 2 * HAZ);
+        if (KPZ - 3 < 0)
+        {
+            D2 = SM * (K2 + 2 * HAZ);
+            AW = 0.5 * SM * (K1 + K2);
+            DR = 2 * AW + D2;
+            if (DR - ag > 0) { IP = 1; return; } else { IP = 2; return; }
+        }
+        else
+        {
+            D2 = SM * (K2 + 2 * (HAZ + CZ));
+            AW = 0.5 * SM*(K2 - K1);
+            DR = D2;
+            if (DR - ag > 0) { IP = 1; return; } else { IP = 2; return; }
+        }
 
-        if (!(LTR2 <= 0))//10:
+        /*if (!(LTR2 <= 0))//10:
         {// !then goto 17;
             SV2(K1, K2);
             if (MPR <= 0) { IP = 3; return; }// then goto 40;
@@ -173,9 +195,9 @@ public class Planet
             D2 = SM * (K2 + 2 * HAZ);
             AW = SM * (K1 + K2) / 2;
             DR = 2 * AW + D2;
-            if ((DR - ag) <= 0) { IP = 2; return; };
+            if ((DR - ag) <= 0) { IP = 2; return; };*/
 
-        }
+        
 
     }
 
@@ -207,14 +229,18 @@ public class Planet
         // Расчет числа зубов короны
 
         double ZB; int ZBI;
-        ZB = (M1 * (Za + Zg) + M2 * Zf) / M2;
-        ZBI = (int)Math.Round(ZB, 0);
-        if ((ZB - ZBI) == 0) Zb = ZBI; else Zb = ZBI + 1;
+        ZB = (int)((M1 * (Za + Zg) + M2 * Zf) / M2);
+        //ZBI = (int)Math.Round(ZB);
+        ZBI = (int)ZB;
+        if ((ZB - ZBI) == 0) Zb = ZBI; else Zb = (int)(ZB + 1);
     }
 
     public void ZTMM46()
     {
         // Заполнение всех полей
+        LTR1 = 1;
+        LTR2 = 1;
+        YD = 0.5;
 
         for (NW = NMin; NW < NMax; NW++)//200
         {
@@ -228,9 +254,9 @@ public class Planet
                     if ((((Za + Zg) * X) - Zg - 7) < 0) break; // then goto 80
                     else
                     {
-                        SV15(1, Za, Zg, M1);
-                        if (IP == 1) break;// then goto 100;
-                        if (IP == 3) break;// goto 80
+                        SV15(2, Za, Zg, M1);
+                        /////if ((IP == 1)||(IP==3))break;// then goto 100;
+                        if (IP == 1) break;// goto 80
                         Da = D1;
                         Dg = D2;
                         Aw1 = AW;
@@ -238,7 +264,7 @@ public class Planet
 
                         for (Zf = ZfMin; Zf < ZfMax; Zf++)
                         {
-                            if (((Za + Zg) * X - (M2 / M1) * (Zf + 2) - 5) < 0) break;//!!!!!!!!? goto 80
+                            if (((Za + Zg) * X - (M2 / M1) * (Zf + 2) - 5) < 0) break;//goto 80
                             //Zb = (int)Math.Round((Zf + (M1 / M2) * (Za + Zg)));
                             SV18();
                             SV15(3, Zf, Zb, M2);
@@ -247,14 +273,15 @@ public class Planet
                             Aw2 = AW;
                             DR2 = DR;
 
-                            if (IP == 1) break;    // then goto 50;
-                            if (IP == 3) break;    // then goto 80;
+                            //if ((IP == 1)||(IP==3)) break;    // then goto 50;
+                            if (IP == 1) break;    // then goto 80;
                             Uvr = 1 + Zg * Zb / (Za * Zf);
                             DU = (UT - Uvr) * 100 / UT;
                             if ((du - Math.Abs(DU)) < 0) break;
                             SV6(Aw1, Aw2, M1);             //    SV6 (YD, AW1, AW2, 1, Y, IP);
-                            if ((IP - 2) > 0) break;// then goto 50;
-                            if (Y == 0)
+                            if((IP - 2) >0) break;// then goto 50;
+                            
+                            /*if (Y == 0)//(Y==0 было
                             {
                                 if ((DR1 - DR2) > 0) { A = DR1; }
                                 else
@@ -266,18 +293,36 @@ public class Planet
                             DR1 = 2 * Aw2 + Dg;
                             if ((DR1 - ag) > 0) break;
                             if ((DR1 - DR2) > 0) A = DR1; else A = DR2;
+                            SV17();*/
+                            if (!(Y == 0))
+                            {
+                                DR1 = 2 * Aw2 + Dg;
+                                if ((DR1 - ag)>0) break;
+                                if ((DR1 - DR2) > 0) A = DR1; else A = DR2;
+                            }
+                            else {
+                                if ((DR1 - DR2) > 0) A = DR1; else A = DR2;
+                                //break;
+                            }
                             SV17();
+                            if (!(IP == 3)) break;
+                            
 
 
                         }//50   
                     }//end else
 
-                    if (IP == 3) break;
-                    if ((DR1 - ag) > 0) break;
+                    //if (IP == 3) break;
+                    ////if ((DR1 - ag >0)||IP==1||IP==3) break;//bilo >=
+                    //if ( DR2 - ag < 0) break;
                 }//80
-                if (IP == 1) break;
+                if (IP == 3) break;
+                //if((IP == 3)||(IP==1)) break;
+                /////if ((IP == 3)|| (DR1 - ag > 0)||(IP==1)) break;
+                //if (DR1 - ag < 0 || DR2 - ag < 0) break;
             }//100
-            if (IP == 1) break;
+            //if (IP == 3) break;
+            //if (IP == 3||IP==1) break;
         }//200
         N = NW;
     }
