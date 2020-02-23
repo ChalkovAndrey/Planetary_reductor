@@ -7,19 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="560" d:DesignWidth="905">
     <Grid Background="Lavender">
-<<<<<<< HEAD
+
         <DataGrid x:Name="ResultGrid" AutoGenerateColumns="True" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Параметр"/>
                 <DataGridTextColumn Header="Значение"></DataGridTextColumn>
-                
-=======
-        <DataGrid x:Name="ResultGrid" AutoGenerateColumns="True" ItemsSource="{DynamicResource ResourceKey=phones}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Параметр"/>
-                <DataGridTextColumn Header="Значение"></DataGridTextColumn>
->>>>>>> Raschet
             </DataGrid.Columns>
         </DataGrid>
+
     </Grid>
 </UserControl>

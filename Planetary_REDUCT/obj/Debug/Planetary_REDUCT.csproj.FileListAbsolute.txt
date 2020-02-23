@@ -40,3 +40,4 @@ D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planeta
 C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\WavePage.g.cs
 C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\WavePage.baml
 C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\OutScreenPage.g.cs
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\OutScreenPage.baml

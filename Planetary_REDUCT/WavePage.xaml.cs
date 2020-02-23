@@ -31,7 +31,7 @@ namespace Planetary_REDUCT
        private void CalculatingClick(Object sender, RoutedEventArgs e)
         {
             wave.Construction();
-            MessageBox.Show();
+            MessageBox.Show("Zf =" +wave.Zf.ToString() + "Zc = " + wave.Zc.ToString() + "Ngp = " +wave.Ngp.ToString() + "Modul = " + wave.modulfc);
         }
         void StartPageClick(Object sender, EventArgs e)
         {
