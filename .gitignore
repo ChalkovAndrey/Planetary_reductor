@@ -1,4 +1,10 @@
-/.vs/
-.vs/Planetary_REDUCT/v16/Server/sqlite3/
+Planetary_REDUCT/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+.vs/Planetary_REDUCT/v16/.suo
 .vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-shm
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-shm~FirstPage
 .vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-wal
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-wal~FirstPage
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-wal~PlanetaryPage
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide~PlanetaryPage
+
