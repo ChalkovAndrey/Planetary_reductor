@@ -20,14 +20,18 @@ namespace Planetary_REDUCT
     /// </summary>
     public partial class WavePage : UserControl
     {
+        Wave wave;
         public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         public WavePage()
         {
             InitializeComponent();
+            wave = new Wave { };
+            this.DataContext = wave;
         }
        private void CalculatingClick(Object sender, RoutedEventArgs e)
         {
-
+            wave.Construction();
+            MessageBox.Show();
         }
         void StartPageClick(Object sender, EventArgs e)
         {

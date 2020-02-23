@@ -57,8 +57,14 @@ namespace Planetary_REDUCT
 
 
         //--------------------------------------------------ВВОДЯТСЯ В ИНТЕРФЕЙСЕ-------------------------------------------------------
-        private int PR, No, Nk;
-        private double Tout, Nout, Dr, Haz, Cz;
+        public int PR { get; set; } = 1;
+        public int No { get; set; }
+        public int Nk { get; set; }
+        public double Tout { get; set; }
+        public double Nout{get;set;}
+        public double Dr { get; set; }
+        public double Haz { get; set; }
+        public double Cz { get; set; }
 
 
         
@@ -322,8 +328,3 @@ namespace Planetary_REDUCT
     }
 }
 
-
-
-
-//    }//конец описания класса
-//}//конец описания пространства имен
