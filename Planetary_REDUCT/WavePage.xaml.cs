@@ -31,12 +31,17 @@ namespace Planetary_REDUCT
        private void CalculatingClick(Object sender, RoutedEventArgs e)
         {
             wave.Construction();
-            MessageBox.Show("Zf =" +wave.Zf.ToString() + "Zc = " + wave.Zc.ToString() + "Ngp = " +wave.Ngp.ToString() + "Modul = " + wave.modulfc);
+            InputGrid.Visibility = Visibility.Collapsed;
+            
+          OutputGrid.Visibility = Visibility.Visible;
+           // MessageBox.Show("Zf =" +wave.Zf.ToString() + "Zc = " + wave.Zc.ToString() + "Ngp = " +wave.Ngp.ToString() + "Modul = " + wave.modulfc);
         }
         void StartPageClick(Object sender, EventArgs e)
         {
             Visibility = Visibility.Collapsed;
             mainWindow.StartPageCall();
         }
+
+       
     }
 }

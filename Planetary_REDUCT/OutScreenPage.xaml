@@ -6,13 +6,14 @@
              xmlns:local="clr-namespace:Planetary_REDUCT"
              mc:Ignorable="d" 
              d:DesignHeight="560" d:DesignWidth="905">
+  
     <Grid Background="Lavender">
 
-        <DataGrid x:Name="ResultGrid" AutoGenerateColumns="True" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Параметр"/>
-                <DataGridTextColumn Header="Значение"></DataGridTextColumn>
-            </DataGrid.Columns>
+        <DataGrid x:Name="ResultGrid" AutoGenerateColumns="True" Loaded="ResultGrid_Loaded" IsReadOnly="True" >
+         
+
+
+          
         </DataGrid>
 
     </Grid>
