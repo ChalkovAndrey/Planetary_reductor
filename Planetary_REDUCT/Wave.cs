@@ -106,11 +106,15 @@ namespace Planetary_REDUCT
         }
         public string[,] GenericResultMassive(ref string[,] result)
         {
-        string[] MainPrams = new string[] { Zf.ToString(), Zc.ToString(), Ngp.ToString(), modulfc.ToString(), U.ToString() };
+            string[] MainPrams = new string[] { Zf.ToString(), Zc.ToString(), Ngp.ToString(), modulfc.ToString(), U.ToString() };
+            string[] Ed = new string[] { "Ед", "Ед", "", "", "", "", "", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм" };
+            string[] Appelation = new string[] { "Zf", "Zc", "NGP", "Mf", "U", "Xf", "Xc", "Df", "Daf", "Dff", "Dc", "Dac", "Dfc", "Sigmacz", "Sigmac", "Bwf", "Bwc", "Bk", "L", "Hob" };
         result = new string[20,4];
             for (int i = 0; i < NameParams.Count; i++)
             {
                 result[i,0] = NameParams[i];
+                result[i, 2] = Ed[i];
+                result[i, 1] = Appelation[i];
                 if (i < 5)
                     result[i, 3] = MainPrams[i];
                 else if (i < 13)

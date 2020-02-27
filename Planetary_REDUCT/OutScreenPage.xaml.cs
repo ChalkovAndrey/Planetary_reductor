@@ -21,6 +21,8 @@ namespace Planetary_REDUCT
     /// </summary>
     public partial class OutScreenPage : UserControl
     {
+        
+
         DataTable data;
         Wave wave = new Wave();
         public OutScreenPage()
@@ -47,22 +49,33 @@ namespace Planetary_REDUCT
           
 
         }
-        private void v()
+        public void LoadData()
         {
             for (int i = 0; i < wave.NameParams.Count; i++)
             {
                 DataRow dataRow = data.NewRow();
                 dataRow[0] = Wave.Result[i, 0];
                 dataRow[3] = Wave.Result[i, 3];
-                
+                dataRow[1] = Wave.Result[i, 1];
+                dataRow[2] = Wave.Result[i, 2];
              //   dataRow[1] = wave.Test[i];
                 data.Rows.Add(dataRow);
             }
         }
-        private void ResultGrid_Loaded(object sender, RoutedEventArgs e)
+        private void SaveResult(object sender, RoutedEventArgs e)
         {
-            if(Wave.Result!=null)
-            v();
+          //SaveClick
+
+        }
+
+        private void ReturnClick(object sender, RoutedEventArgs e)
+        {
+            
+            Grid w =(Grid) this.Parent;
+            w.Visibility = Visibility.Collapsed;
+            Grid s = (Grid)w.Parent;
+            s.Children[0].Visibility = Visibility.Visible;
+            data.Clear();
 
         }
     }

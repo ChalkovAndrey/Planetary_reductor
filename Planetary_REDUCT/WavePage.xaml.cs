@@ -32,7 +32,8 @@ namespace Planetary_REDUCT
         {
             wave.Construction();
             InputGrid.Visibility = Visibility.Collapsed;
-            
+            OutScreenPage a = (OutScreenPage)OutputGrid.Children[0];
+            a.LoadData();
           OutputGrid.Visibility = Visibility.Visible;
            // MessageBox.Show("Zf =" +wave.Zf.ToString() + "Zc = " + wave.Zc.ToString() + "Ngp = " +wave.Ngp.ToString() + "Modul = " + wave.modulfc);
         }
