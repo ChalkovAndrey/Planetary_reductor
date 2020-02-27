@@ -24,7 +24,7 @@ namespace Planetary_REDUCT
         
 
         DataTable data;
-        Wave wave = new Wave();
+       
         public OutScreenPage()
         {
             InitializeComponent();
@@ -49,15 +49,15 @@ namespace Planetary_REDUCT
           
 
         }
-        public void LoadData()
+        public void LoadData(Wave wave)
         {
             for (int i = 0; i < wave.NameParams.Count; i++)
             {
                 DataRow dataRow = data.NewRow();
-                dataRow[0] = Wave.Result[i, 0];
-                dataRow[3] = Wave.Result[i, 3];
-                dataRow[1] = Wave.Result[i, 1];
-                dataRow[2] = Wave.Result[i, 2];
+                dataRow[0] = wave.Result[i, 0];
+                dataRow[3] = wave.Result[i, 3];
+                dataRow[1] = wave.Result[i, 1];
+                dataRow[2] = wave.Result[i, 2];
              //   dataRow[1] = wave.Test[i];
                 data.Rows.Add(dataRow);
             }
@@ -76,6 +76,7 @@ namespace Planetary_REDUCT
             Grid s = (Grid)w.Parent;
             s.Children[0].Visibility = Visibility.Visible;
             data.Clear();
+          
 
         }
     }

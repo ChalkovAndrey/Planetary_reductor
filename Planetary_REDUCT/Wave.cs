@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Planetary_REDUCT
 {
   
-    class Wave
+  public  class Wave
     {//---------------------------------------РАССЧИТЫВАЮТСЯ В МЕТОДАХ----------------------------------------------------
         public  List<string> NameParams { get; set; } = new List<string> { "Число зубьев колеса f", "Число зубьев колеса с",
             "Номер гибкого подшипника", "Модуль ступени", "Передаточное отношение","Коэффициент смещения колеса F",
@@ -45,7 +45,7 @@ namespace Planetary_REDUCT
         //Ngp - номер (обозначение) гибкого подшипника
 
         public double modulfc;//modulfc - модуль ступени FC, определяемый на этапе конструирования объекта
-      static public string[,] Result;
+       public string[,] Result;
 
         //--------------------------------------------------ВЫВОДЯТСЯ НА РЕЗУЛЬТАТЫ--------------------------------------
         //Zf - чило зубьев гибкого колеса, Zc - число субьев жесткого колеса, 
@@ -103,6 +103,19 @@ namespace Planetary_REDUCT
         public    List<List<string>> Vernyt(){
             return new List<List<string>> { NameParams, Test };
 
+        }
+        public void ResetData()
+        {
+            for (int i = 0; i < az.Length; i++)
+            {
+                az[i] = 0;
+            }
+            for (int i = 0; i < ak.Length; i++)
+            {
+                ak[i] = 0;
+            }
+            Zf = 0;Zc = 0;modulfc = 0;Ngp = 0;U = 0;
+            
         }
         public string[,] GenericResultMassive(ref string[,] result)
         {
