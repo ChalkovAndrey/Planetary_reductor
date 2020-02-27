@@ -27,7 +27,7 @@ namespace Planetary_REDUCT
         {
             InitializeComponent();
             data = GetStartEmptyTable();
-            v();
+           
             ResultGrid.ItemsSource = data.DefaultView;
         }
         private DataTable GetStartEmptyTable()
@@ -36,7 +36,7 @@ namespace Planetary_REDUCT
             DataColumn param = new DataColumn("Вычисляемый параметр",typeof(string));
             DataColumn designation = new DataColumn("Обозначение",typeof(string));
             DataColumn ed = new DataColumn("Единицы измерения",typeof(string));
-            DataColumn value=new DataColumn("Рассчитанное значение",typeof(int));
+            DataColumn value=new DataColumn("Рассчитанное значение",typeof(string));
            
             data.Columns.Add(param);
             data.Columns.Add(designation);
@@ -52,15 +52,18 @@ namespace Planetary_REDUCT
             for (int i = 0; i < wave.NameParams.Count; i++)
             {
                 DataRow dataRow = data.NewRow();
-                dataRow[0] = wave.NameParams[i];
+                dataRow[0] = Wave.Result[i, 0];
+                dataRow[3] = Wave.Result[i, 3];
+                
              //   dataRow[1] = wave.Test[i];
                 data.Rows.Add(dataRow);
             }
         }
         private void ResultGrid_Loaded(object sender, RoutedEventArgs e)
         {
-          
-            
+            if(Wave.Result!=null)
+            v();
+
         }
     }
    

@@ -45,7 +45,7 @@ namespace Planetary_REDUCT
         //Ngp - номер (обозначение) гибкого подшипника
 
         public double modulfc;//modulfc - модуль ступени FC, определяемый на этапе конструирования объекта
-
+      static public string[,] Result;
 
         //--------------------------------------------------ВЫВОДЯТСЯ НА РЕЗУЛЬТАТЫ--------------------------------------
         //Zf - чило зубьев гибкого колеса, Zc - число субьев жесткого колеса, 
@@ -104,19 +104,19 @@ namespace Planetary_REDUCT
             return new List<List<string>> { NameParams, Test };
 
         }
-        public string[,] GenericResultMassive()
+        public string[,] GenericResultMassive(ref string[,] result)
         {
-        string[] MainPrams = new string[] { No.ToString(), Nk.ToString(), Tout.ToString(), Dr.ToString(), Haz.ToString(), Cz.ToString() };
-        string[,] result = new string[20,4];
+        string[] MainPrams = new string[] { Zf.ToString(), Zc.ToString(), Ngp.ToString(), modulfc.ToString(), U.ToString() };
+        result = new string[20,4];
             for (int i = 0; i < NameParams.Count; i++)
             {
                 result[i,0] = NameParams[i];
-                if (i < 6)
+                if (i < 5)
                     result[i, 3] = MainPrams[i];
-                else if (i < 12)
-                    result[i, 3] = az[i - 6].ToString();
+                else if (i < 13)
+                    result[i, 3] = az[i - 5].ToString();
                 else
-                    result[i, 3] = ak[i - 12].ToString();
+                    result[i, 3] = ak[i - 13].ToString();
 
             }
             return result;
@@ -352,7 +352,7 @@ namespace Planetary_REDUCT
                     }
                 }
             }
-            string[,] result = GenericResultMassive();
+          Result = GenericResultMassive(ref Result);
 
         
 
