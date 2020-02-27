@@ -20,9 +20,29 @@ namespace Planetary_REDUCT
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+       
         public MainWindow()
         {
             InitializeComponent();
+            
+            
+            
         }
+        
+        public void PlanetaryCall()
+        {
+            PlanetaryPage.Visibility = Visibility.Visible;
+        }
+        public void StartPageCall()
+        {
+            StartPage.Visibility = Visibility.Visible;
+        }
+        public void WaveCall()
+        {
+            WavePage.Visibility = Visibility.Visible;
+        }
+        
+
     }
 }
