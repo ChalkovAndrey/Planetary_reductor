@@ -7,6 +7,7 @@ Planetary_REDUCT/obj/Debug/DesignTimeResolveAssemblyReferences.cache
 .vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-wal~FirstPage
 .vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-wal~PlanetaryPage
 .vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide~PlanetaryPage
+<<<<<<< HEAD
  Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.cache
 Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.lref
 Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.cache
@@ -16,4 +17,9 @@ Planetary_REDUCT/bin/Debug/Planetary_REDUCT.pdb
 
 
 
+=======
+Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.lref
+Planetary_REDUCT/obj/Debug/Planetary_REDUCT.csprojAssemblyReference.cache
+Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.cache
+>>>>>>> OutResult
 
