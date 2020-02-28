@@ -34,7 +34,7 @@ namespace Planetary_REDUCT
             wave.Construction();
             InputGrid.Visibility = Visibility.Collapsed;
             OutScreenPage outScreenPage = (OutScreenPage)OutputGrid.Children[0];
-            outScreenPage.LoadData(wave);
+            outScreenPage.LoadWaveData(wave);
           OutputGrid.Visibility = Visibility.Visible;
             wave.ResetData();
             //wave = new Wave { };

@@ -49,7 +49,7 @@ namespace Planetary_REDUCT
           
 
         }
-        public void LoadData(Wave wave)
+        public void LoadWaveData(Wave wave)
         {
             for (int i = 0; i < wave.NameParams.Count; i++)
             {
