@@ -30,7 +30,7 @@ namespace Planetary_REDUCT
             InitializeComponent();
             data = GetStartEmptyTable();
            
-            ResultGrid.ItemsSource = data.DefaultView;
+          //  ResultGrid.ItemsSource = data.DefaultView;
         }
         private DataTable GetStartEmptyTable()
         {
@@ -48,6 +48,10 @@ namespace Planetary_REDUCT
           
           
 
+        }
+        public void SetTable (DataTable table)
+        {
+            ResultGrid.ItemsSource = table.DefaultView;
         }
         public void LoadWaveData(Wave wave)
         {

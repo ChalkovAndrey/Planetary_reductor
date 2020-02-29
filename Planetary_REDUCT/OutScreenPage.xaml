@@ -46,7 +46,7 @@
           
         </DataGrid>
             
-                <StackPanel  Grid.Column="1" VerticalAlignment="Bottom">
+                <StackPanel  Grid.Column="1" VerticalAlignment="Bottom" >
                  <Button Content="Сохранить" Width="100" Height="25" Margin="25" Click="SaveResult"></Button>
                 <Button Content="Вернуться к рассчетам" Height="25" Width="150" Margin="0,0,0,40" Click="ReturnClick"></Button>
                 

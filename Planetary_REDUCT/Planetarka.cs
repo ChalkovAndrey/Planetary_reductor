@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 public class Planet
 {   //-------------------------------РАССЧИТЫВАЕТСЯ МЕТОДАМИ---------------------------------------------------
     public int Za, Zb, Zg, Zf, N; // Z1 - число зубьев солнечного, Z2 - число зубьев сателлита
@@ -11,6 +11,7 @@ public class Planet
 
     //-----------------------------------------ВВОДИТСЯ ИЗ ИНТЕРФЕЙСА-----------------------------------------
     public int ZaMin { get; set; }
+  public static  List<string> Result = new List<string>(13);
     
     public int ZaMax { get; set; }
     public int ZgMin { get; set; }
@@ -43,7 +44,22 @@ public class Planet
  //Y - суммарный коэффициент смещения, U - передаточное отношение, DU - погрешность реализации передаточного 
  //---------------------------------------------------------------------------------------------------------------------
 
-
+  private void SetResult()
+    {
+        Result.Add( Za.ToString());
+        Result.Add(Zb.ToString());
+        Result.Add(Zg.ToString());
+        Result.Add(Zf.ToString());
+        Result.Add(N.ToString());
+        Result.Add(Da.ToString());
+        Result.Add(Db.ToString());
+        Result.Add(Dg.ToString());
+        Result.Add(Df.ToString());
+        Result.Add(A.ToString());
+        Result.Add(Y.ToString());
+        Result.Add(U.ToString());
+        Result.Add(DU.ToString());
+    }
 //YD=1 - допущение (в большинстве случаев)
     private void SVZ1(double SM, int LH)
     {
@@ -281,6 +297,7 @@ public class Planet
             if (IP == 1) break;
         }//200
         N = NW;
+        SetResult();
     }
 
 

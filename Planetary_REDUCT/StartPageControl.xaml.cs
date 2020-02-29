@@ -27,7 +27,7 @@ namespace Planetary_REDUCT
         public StartPageControl()
         {
             InitializeComponent();
-           
+          
            
         }
       
@@ -35,9 +35,9 @@ namespace Planetary_REDUCT
         {
             Visibility = Visibility.Collapsed;
             mainWindow.PlanetaryCall();
-            
+            //Testgrid.ItemsSource = mainWindow.dataTable.DefaultView;
 
-            
+
         }
         private void WaveCallClick (Object sender,RoutedEventArgs e)
         {

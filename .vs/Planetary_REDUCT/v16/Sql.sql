@@ -1,0 +1,1 @@
+SELECT * FROM piproject.planetary_tab;
