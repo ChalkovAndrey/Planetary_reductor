@@ -35,7 +35,7 @@ namespace Planetary_REDUCT
         {
             Visibility = Visibility.Collapsed;
             mainWindow.PlanetaryCall();
-            //Testgrid.ItemsSource = mainWindow.dataTable.DefaultView;
+          
 
 
         }

@@ -23,14 +23,14 @@ namespace Planetary_REDUCT
     {
         
 
-        DataTable data;
+       public DataTable data;
        
         public OutScreenPage()
         {
             InitializeComponent();
             data = GetStartEmptyTable();
            
-          //  ResultGrid.ItemsSource = data.DefaultView;
+            ResultGrid.ItemsSource = data.DefaultView;
         }
         private DataTable GetStartEmptyTable()
         {
@@ -51,7 +51,8 @@ namespace Planetary_REDUCT
         }
         public void SetTable (DataTable table)
         {
-            ResultGrid.ItemsSource = table.DefaultView;
+            data = table;
+            ResultGrid.ItemsSource = data.DefaultView;
         }
         public void LoadWaveData(Wave wave)
         {

@@ -47,3 +47,15 @@ C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debu
 C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\Renci.SshNet.dll
 C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.CopyComplete
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\planetarydb.db
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\EntityFramework.dll
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.dll
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\EntityFramework.xml
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.xml
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.dll.config

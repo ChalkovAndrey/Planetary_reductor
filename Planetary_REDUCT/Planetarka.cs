@@ -20,13 +20,14 @@ public class Planet
     public int ZfMax { get; set; }
     public int NMin { get; set; }
     public int NMax { get; set; }
-    public int M1 { get; set; }
-    public int M2{ get; set; }
+    public float M1 { get; set; }
+    public float M2{ get; set; }
     public double du { get; set; }
     public double UT { get; set; }
     public double ag { get; set; }
     private double DU; //UT - требуемое передаточное отношение, du - требуемая погрешность, ag - требуемый габарит
     private int LTR1, LTR2; // Маркеры для ответвления в расчетах
+    private bool LTR = false;
  //-----------------------------------------------------------------------------------------------------------
 
 
@@ -51,258 +52,137 @@ public class Planet
         Result.Add(Zg.ToString());
         Result.Add(Zf.ToString());
         Result.Add(N.ToString());
-        Result.Add(Da.ToString());
-        Result.Add(Db.ToString());
-        Result.Add(Dg.ToString());
-        Result.Add(Df.ToString());
-        Result.Add(A.ToString());
-        Result.Add(Y.ToString());
-        Result.Add(U.ToString());
-        Result.Add(DU.ToString());
+        Result.Add(string.Format("{0:0.000}", Da));
+        Result.Add(string.Format("{0:0.000}", Db));
+        Result.Add(string.Format("{0:0.000}", Dg));
+        Result.Add(string.Format("{0:0.000}", Df));
+        Result.Add(string.Format("{0:0.000}", A));
+        Result.Add(string.Format("{0:0.000}", Y));
+        Result.Add(string.Format("{0:0.000}",U));
+        Result.Add(string.Format("{0:0.000}", DU));
     }
-//YD=1 - допущение (в большинстве случаев)
-    private void SVZ1(double SM, int LH)
+
+
+    private bool CheckLTR(int K, int P)//проверка наличия общих множителей у целых чисел при требовании износостойкости. Общие есть - 1. нет - 0.
     {
-
- // Определение угла зацепления и осевого зазора
-
-        ALF = Math.PI / 9;
-        if (LH < 0) { HAZ = 1; } else HAZ = 1.1;
-        if (SM - 0.5 <= 0) { CZ = 0.5; }
-        else
+        if (LTR)
         {
-            if (SM - 1 <= 0) { CZ = 0.35; } else CZ = 0.25;
+            if (K % P == 0 || P % K == 0) return true;
+            else return false;
         }
+        else return false;
     }
 
-    // Условие сборки
-
-    private void SV1(int K, int N) { if ((K % N) == 0) JPR = 0; else JPR = 1; }
-
-    // Проверка отсутствия интерференции
-
-    private void SV2(int K1, int K2)
+    private bool Sosedstvo(int Zsol, int Zs1, int Zs2, int Zk, double m1, double m2, int Nw)//проверка соседства. Соседство невозможно - 1, возможно - 0.
     {
-        for (int i = 2; i < K1; i++)
-        {
-            SV1(K1, i);
-            if (JPR == 0)
-            {
-                SV1(K2, i);
-                if (JPR == 0) { MPR = 0; return; }
-            }
-        }
-        MPR = 1;
+        if ((Zsol + Zs1) * Math.Sin(3.14 / Nw) - (Zs2 + 2) * m2 / m1 < 5 && Nw >= 3) return true;
+        else return false;
     }
 
-
-    private void SV6(double AW1, double AW2, double SM1)
+    private bool Sborka(int Zsol, int Zs1, int Zs2, int Zk, int Nw)//проверка условия сборки. собрать нельзя - 1, можно - 0.
     {
-
-       // Вычисление суммарного смещения
-
-        Y = (AW2 - AW1) / SM1;
-        if (Y < 0) { IP = 4; return; } ;    
-        if (Y == 0) { IP = 2; return;};    
-        if ((Y - YD) > 0) IP = 4;                            
+        if ((Zk * Zs1 + Zsol * Zs2) / (Zs1 * Nw) - Math.Round((double)(Zk * Zs1 + Zsol * Zs2) / (Zs1 * Nw), 0) != 0 && Nw >= 2) return true;
+        else return false;
     }
 
-
-
-    private void SV15(int KPZ, int K1, int K2, double SM)
+    private bool Interfer(int Zs2, int Zk, double haz)//проверка возможности наличия интерференции. Интерференция есть - 1, нет -0.
     {
-
-        // Проверка возможности реализации механизма при заданных числах зубов, модулях
-        // и расчет геометрических параметров передачи
-
-        double Ulok, C;
-       // ALF = 20;
-        //HAZ = 1;
-        //CZ = 1;
-
-        //JPR = 0;
-        /*procedure SV15(KPZ, K1, K2:integer; SM: real; NW: integer; AG: real;
-         LTR1,LTR2: integer; var D1:real; var D2:real;
-        var AW:real; var DR:real; var IP:byte);
-         var U, C:real;
-        MPR,JPR: byte;*/
-        Ulok = K2 / K1;
-        //--------------------------------------------------------------------------
-        //----------Замена закомментированного ниже блока---------------------------
-        //--------------------------------------------------------------------------
-        if (KPZ == 1) { if (!(Ulok - 6 <= 0)) { IP = 1; return; } };
-        if (KPZ == 3)
-        {
-            C = ((K1 * K1) - 34) / (2 * K1 - 34);
-            if ((K2 - C) < 0) { IP = 3; return; }
-            else
-            { if (!((Ulok - 8) <= 0)) { IP = 1; return; } };
-            //goto 25;
-        }//goto 3
-        if ((KPZ == 2) || (KPZ == 4))
-        {
-            if (1 - Ulok <= 0)
-            {
-                if (!(Ulok - 6 <= 0))
-                {
-                    IP = 1; return;
-                }
-            }
-            else { IP = 3; return;}
-        }
-
-        //----------------------------------------------------------------------------------------------------------
-        //
-
-        if (!(LTR1 <= 0))
-        {
-            if (!((KPZ - 3) >= 0))
-            {
-                SV1(K1, NW);
-                if (JPR <= 0) { IP = 1; return; }
-            }
-
-            else
-            {
-                SV1(K2, NW);
-                if (JPR <= 0) { IP = 3; return; }
-
-            }
-        }
-
-
-        if (!(LTR2 <= 0))//10:
-        {// !then goto 17;
-            SV2(K1, K2);
-            if (MPR <= 0) { IP = 3; return; }// then goto 40;
-        }
-        else
-        {
-            SVZ1(SM, 0);//17:
-            D1 = SM * (K1 + 2 * HAZ);
-            if ((KPZ - 3) >= 0)
-            {
-                D2 = SM * (K2 + 2 * (HAZ + CZ));
-                AW = SM * (K2 - K1) / 2;
-                DR = D2;
-                if ((DR - ag) <= 0) { IP = 2; return; };
-            }// then goto 20;
-            D2 = SM * (K2 + 2 * HAZ);
-            AW = SM * (K1 + K2) / 2;
-            DR = 2 * AW + D2;
-            if ((DR - ag) <= 0) { IP = 2; return; };
-
-        }
+        if (((Zs2 * Zs2 - 34) / (2 * Zs2 - 34) > Zk && Zs2 <= 27 && haz == 1) || (Zk - Zs2 < 7 && Zs2 > 27)) return true;
+        else return false;
 
     }
 
-    private void SV16(int NW)
+    private void GeomParamSolnSAT()//вычисление геометрических параметров ступени солнце-сателлит1
     {
-        // Определение числа зубьев второго сателлита и проверка
-        //возможности реализации при такой конфигурации
-
-        Zf = Za + Zb;
-        SV1(Zf, NW);
-    
+        Da = M1 * Za;
+        Dg = M1 * Zg;
+        Aw1 = (Da + Dg) / 2;
+        DR1 = Aw1 + Dg;
     }
 
-    private void SV17()
+    private void GeomParamSolnKOR()//вычисление геометрических параметров ступени сателлит2-корона
     {
-
-        // Проверка по условию...
-
-        int LC; int LB; int p;
-        LC = Zg * Zb + Za * Zf;
-        LB = Zg * NW;
-        if ((LC % LB) == 0) p = 0; else p = 1;// ВМЕСТО SV1(LC, LB, p);
-        IP = p;
-    }
-
-    private void SV18()
-    {
-
-        // Расчет числа зубов короны
-
-        double ZB; int ZBI;
-        ZB = (M1 * (Za + Zg) + M2 * Zf) / M2;
-        ZBI = (int)Math.Round(ZB, 0);
-        if ((ZB - ZBI) == 0) Zb = ZBI; else Zb = ZBI + 1;
+        Df = M2 * Zf;
+        Db = M2 * Zb;
+        Aw2 = (Db - Df) / 2;
+        DR2 = M2 * (Zb + 2 * (HAZ + CZ));
     }
 
     public void ZTMM46()
     {
-        // Заполнение всех полей
+        LTR1 = 1;
+        LTR2 = 1;
+        YD = 0.5;
 
-        for (NW = NMin; NW < NMax; NW++)//200
+        //ZaMin = 20;ZaMax = 30; ZgMin = 25;ZgMax =50; ZfMin = 22; ZfMax = 40; M1 = 0.5;M2 = 0.5; NMin = 2; NMax = 3; UT = 9; du = 10; ag = 60;
+        //ZaMin = 18; ZaMax = 30; ZgMin = 25; ZgMax = 65; ZfMin = 22; ZfMax = 40; M1 = 0.4f; M2 = 0.5f; NMin = 2; NMax = 3; UT = 15; du = 10; ag = 60;
+        HAZ = 1;
+        CZ = 0.25;
+        LTR = true;
+
+        for (NW = NMin; NW < NMax; NW++)
         {
-            double X = Math.Sin(Math.PI / NW);
-            double a = (Za + Zg) * X;
-            double b = Za * X;
-            for (Za = ZaMin; Za < ZaMax; Za++)//100
+            Za = ZaMin;
+            while (Za != ZaMax)
             {
-                for (Zg = ZgMin; Zg < ZgMax; Zg++)//80
+                Zg = ZgMin;
+                while (Zg != ZgMax)
                 {
-                    if ((((Za + Zg) * X) - Zg - 7) < 0) break; // then goto 80
-                    else
+
+                    if (CheckLTR(Za, Zg)) goto M80; //проверка наличия общих множителей колес ступени при требовании износостойкости
+                    if (CheckLTR(Za, NW)) goto M100;//проверка общих множителей числа зубьев солнца и числа сателлитов при требовании износостойкости
+
+                    if (Zg / Za < 1) goto M80;// проверка допустимости передаточного отношения ступени a-g
+                    if (Zg / Za > 6) goto M100;// проверка допустимости передаточного отношения ступени a-g
+
+
+                    GeomParamSolnSAT();//вычисление геометрических параметров ступени солнце-сателлит1
+
+                    if (DR1 > ag) goto M80;// проверка влезания механизма в габарит
+
+                    Zf = ZfMin;
+
+                    while (Zf != ZfMax)
                     {
-                        SV15(1, Za, Zg, M1);
-                        if (IP == 1) break;// then goto 100;
-                        if (IP == 3) break;// goto 80
-                        Da = D1;
-                        Dg = D2;
-                        Aw1 = AW;
-                        DR1 = DR;
 
-                        for (Zf = ZfMin; Zf < ZfMax; Zf++)
-                        {
-                            if (((Za + Zg) * X - (M2 / M1) * (Zf + 2) - 5) < 0) break;//!!!!!!!!? goto 80
-                            //Zb = (int)Math.Round((Zf + (M1 / M2) * (Za + Zg)));
-                            SV18();
-                            SV15(3, Zf, Zb, M2);
-                            Df = D1;
-                            Db = D2;
-                            Aw2 = AW;
-                            DR2 = DR;
+                        Zb = (int)(Zf + ((Za + Zg) * M1 / M2));
+                        //if (CheckLTR(Zb, NW)) goto M200vix;
+                        //if (CheckLTR(Zb, Zf)) goto M50;
 
-                            if (IP == 1) break;    // then goto 50;
-                            if (IP == 3) break;    // then goto 80;
-                            Uvr = 1 + Zg * Zb / (Za * Zf);
-                            DU = (UT - Uvr) * 100 / UT;
-                            if ((du - Math.Abs(DU)) < 0) break;
-                            SV6(Aw1, Aw2, M1);             //    SV6 (YD, AW1, AW2, 1, Y, IP);
-                            if ((IP - 2) > 0) break;// then goto 50;
-                            if (Y == 0)
-                            {
-                                if ((DR1 - DR2) > 0) { A = DR1; }
-                                else
-                                {
-                                    A = DR2;
-                                    SV17();
-                                }
-                            };
-                            DR1 = 2 * Aw2 + Dg;
-                            if ((DR1 - ag) > 0) break;
-                            if ((DR1 - DR2) > 0) A = DR1; else A = DR2;
-                            SV17();
+                        if (Zb / Zf < 1.4) goto M50;// проверка допустимости передаточного отношения ступени f-b
+                        if (Zb / Zf > 8) goto M200vix;// проверка допустимости передаточного отношения ступени f-b                    
+
+                        if (Interfer(Zf, Zb, HAZ) || Sosedstvo(Za, Zg, Zf, Zb, M1, M2, NW) || Sborka(Za, Zg, Zf, Zb, NW)) goto M50;
+                        //проверка невыполнения какого-либо из условий: отсутствия интерференции, соседства, сборки
+
+                        GeomParamSolnKOR();//вычисление геометрических параметров ступени сателлит2-корона
+
+                        Y = (Aw2 - Aw1) / M1;
+                        if (YD < Y && Y != 0) goto M50;//проверка вычисленноого коэффициента суммарного смещения на вхождение в предел
+
+                        U = 1 + Zg * Zb / (Za * Zf);
+                        DU = (UT - U) * 100 / UT;
+                        if (Math.Abs(DU) > du) goto M80;
+                        if (DR2 > ag) goto M50; //проверка влезания механизма в габарит
+
+                        if (DR1 > DR2) A = DR1; else A = DR2; //принятие габарита механизма как наибольшего из габаритов ступеней
+                        goto M200;//окончание расчета
 
 
-                        }//50   
-                    }//end else
+                    M50: Zf++;
+                    }
 
-                    if (IP == 3) break;
-                    if ((DR1 - ag) > 0) break;
-                }//80
-                if (IP == 1) break;
-            }//100
-            if (IP == 1) break;
-        }//200
-        N = NW;
+                M80: Zg++;
+                }
+
+            M100: Za++;
+            }
+        M200vix:;
+        }
+    M200: N = NW;
         SetResult();
+
     }
 
-
-    public Planet()
-	{
-
-	}
+  
 }
