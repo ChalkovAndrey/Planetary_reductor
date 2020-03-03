@@ -7,6 +7,22 @@
             
              mc:Ignorable="d" 
              d:DesignHeight="560" d:DesignWidth="905">
+
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=PlanetaryBut, Path=IsMouseOver}"
+                        Value="True">
+                    <Setter Property="Source" Value="Images/Planet.jpg"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=WavesBut, Path=IsMouseOver}"
+                        Value="True">
+                    <Setter Property="Source" Value="Images/Wave.jpg"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
     <Grid  >
         
         <Grid.RowDefinitions>
@@ -25,7 +41,7 @@
         </Grid.ColumnDefinitions>
        
         <TextBlock Text="Название программы" FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center"/>
-        <Image Name="ImReductor" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Stretch="Uniform"  Source="Images/Reductor.jpg" ></Image>
+        <Image Name="ImReductor" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Stretch="Uniform" />
         <TextBlock Text="Выберите тип редуктора" FontSize="20" Grid.Row="1"  Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>

@@ -128,5 +128,9 @@
   <ItemGroup>
     <Resource Include="Images\Reductor.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Planet.jpg" />
+    <Resource Include="Images\Wave.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
