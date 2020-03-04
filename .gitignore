@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /.vs/
 .vs/Planetary_REDUCT/v16/Server/sqlite3/
 .vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide
@@ -9,3 +10,30 @@
 .vs/Planetary_REDUCT/v15/Server/sqlite3/storage.ide
 .vs/Planetary_REDUCT/v15/Server/sqlite3/storage.ide-shm
 .vs/Planetary_REDUCT/v15/Server/sqlite3/storage.ide-w
+=======
+Planetary_REDUCT/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+.vs/Planetary_REDUCT/v16/.suo
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-shm
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-shm~FirstPage
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-wal
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-wal~FirstPage
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide-wal~PlanetaryPage
+.vs/Planetary_REDUCT/v16/Server/sqlite3/storage.ide~PlanetaryPage
+<<<<<<< HEAD
+ Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.cache
+Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.lref
+Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.cache
+Planetary_REDUCT/bin/Debug/Planetary_REDUCT.exe
+        Planetary_REDUCT/bin/Debug/Planetary_REDUCT.pdb
+Planetary_REDUCT/bin/Debug/Planetary_REDUCT.pdb
+
+
+
+=======
+Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.lref
+Planetary_REDUCT/obj/Debug/Planetary_REDUCT.csprojAssemblyReference.cache
+Planetary_REDUCT/obj/Debug/Planetary_REDUCT_MarkupCompile.cache
+>>>>>>> OutResult
+
+>>>>>>> d99d884bca0e06ea73b115f442876e720cd38bd4

@@ -1,0 +1,1 @@
+SELECT * FROM piproject.panetary_tab;  

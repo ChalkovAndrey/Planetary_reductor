@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\obj\Debug\
 Planetary_REDUCT
 none
 false
 DEBUG;TRACE
-D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\App.xaml
-11151548125
+C:\Users\Kolichka\Desktop\planetary\Planetary_reductor\Planetary_REDUCT\App.xaml
+5-1995453878
 
-10-1262880315
-131569487696
-MainWindow.xaml;
+14-345236456
+2285413337
+MainWindow.xaml;OutScreenPage.xaml;PlanetaryPage.xaml;StartPageControl.xaml;WavePage.xaml;
 
 True
 

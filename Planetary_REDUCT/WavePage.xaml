@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Planetary_REDUCT.WavePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Planetary_REDUCT"
+             mc:Ignorable="d" 
+             d:DesignHeight="560" d:DesignWidth="905">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Center"
+                />
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+    <Grid x:Name="InputGrid" >
+       
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Content="No" Grid.Column="0" Grid.Row="1"></Label>
+        <Label Content="Nk" Grid.Column="2" Grid.Row="1"></Label>
+        <Label Content="Tout" Grid.Column="0" Grid.Row="2"></Label>
+        <Label Content="Nout" Grid.Column="2" Grid.Row="2"></Label>
+        <Label Content="Dr" Grid.Column="0" Grid.Row="3"></Label>
+        <Label Content="Haz" Grid.Column="2" Grid.Row="3"></Label>
+        <Label Content="Cz" Grid.Column="0" Grid.Row="4"></Label>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=No,Mode=TwoWay}" ></TextBox>
+        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding Path=Nk,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=Tout,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="3" Grid.Row="2" Text="{Binding Path=Nout,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=Dr,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="3" Grid.Row="3" Text="{Binding Path=Haz,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=Cz,Mode=TwoWay}" ></TextBox>
+        
+        
+        <Canvas Grid.Row="3" Grid.RowSpan="5"  Grid.Column="4">
+            <Button   HorizontalAlignment="Center" Width="100"
+                    Height="30" Margin="20" Content="Очистить" Canvas.Top="50" Canvas.Right="60"/>
+            <Button HorizontalAlignment="Center" Width="100" 
+                    Height="30" Margin="20" Content="Рассчитать" Canvas.Top="100" Canvas.Right="140" Click="CalculatingClick" />
+            <Button HorizontalAlignment="Center" Width="100"
+                    Height="30" Margin="20" Canvas.Top="50" Canvas.Left="100" Content="Пример данных"/>
+            <Button HorizontalAlignment="Center" Width="auto" Click="StartPageClick"
+                    Height="30" Margin="20" Canvas.Top="150" Canvas.Left="130">Вернуться к выбору редуктора</Button>
+        </Canvas >
+        </Grid>
+        <Grid x:Name="OutputGrid" Visibility="Collapsed" >
+            <local:OutScreenPage x:Name="OutScreenPage"></local:OutScreenPage>
+    </Grid>
+    </Grid>
+</UserControl>
