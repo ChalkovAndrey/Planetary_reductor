@@ -7,8 +7,18 @@ using System.Threading.Tasks;
 
 namespace Planetary_REDUCT
 {
-    class Wave
+  
+  public  class Wave
     {//---------------------------------------РАССЧИТЫВАЮТСЯ В МЕТОДАХ----------------------------------------------------
+        public  List<string> NameParams { get; set; } = new List<string> { "Число зубьев колеса f", "Число зубьев колеса с",
+            "Номер гибкого подшипника", "Модуль ступени", "Передаточное отношение","Коэффициент смещения колеса F",
+            "Коэффициент смещения колеса C","Диаметр делительной окружности колеса F","Диаметр окружности вершин колеса F","Диаметр окружности впадин колеса F"
+        ,"Диаметр делительной окружности колеса С","Диаметр окружности вершин колеса С","Диаметр окружности впадин колеса С",
+            "Толщина стенки гибкого стакана под зубьями","Tолщина стенки стакана колеса","Ширина венца гибкого колеса","Ширина венца жесткого колеса","Ширина пояска для снижения перекоса зубьев",
+        "Длина стакана гибкого колеса","Толщина обода жесткого колеса под зубьями"};
+
+
+        public static List<string> Test { get; set; } = new List<string> { "1", "2", "3","4"," 5" };
         private double U, Dgp; //sigmacz, sigmac, bwf, bwc, l, bk, hob, mfc;
         //U - передаточное отношение волнового редуктора
         //Dgp - диаметр гибкого подшипника
@@ -29,13 +39,13 @@ namespace Planetary_REDUCT
                                             //ak[4] - bk - ширина пояска для снижения перекоса зубьев; 
                                             //ak[5] - l - длина стакана гибкого колеса;
                                             //ak[6] - hob - толщина обода жесткого колеса под зубьями;
-
+    
         public int Zf, Zc, Ngp;
         //числа зубьев колес F, C
         //Ngp - номер (обозначение) гибкого подшипника
 
         public double modulfc;//modulfc - модуль ступени FC, определяемый на этапе конструирования объекта
-
+       public string[,] Result;
 
         //--------------------------------------------------ВЫВОДЯТСЯ НА РЕЗУЛЬТАТЫ--------------------------------------
         //Zf - чило зубьев гибкого колеса, Zc - число субьев жесткого колеса, 
@@ -68,7 +78,7 @@ namespace Planetary_REDUCT
         public double Haz { get; set; }
         public double Cz { get; set; }
 
-
+      
         
         //PR - номер схемы механнизма для выбора формулы расчета передаточного (будет выбираться по картинке и кнопке)
         //Tout - вращательный момент нагрузки
@@ -90,7 +100,44 @@ namespace Planetary_REDUCT
 
 
         // SVOL2 - выбор гибкого подшипника по ГОСТ
-        
+        public    List<List<string>> Vernyt(){
+            return new List<List<string>> { NameParams, Test };
+
+        }
+        public void ResetData()
+        {
+            for (int i = 0; i < az.Length; i++)
+            {
+                az[i] = 0;
+            }
+            for (int i = 0; i < ak.Length; i++)
+            {
+                ak[i] = 0;
+            }
+            Zf = 0;Zc = 0;modulfc = 0;Ngp = 0;U = 0;
+            
+        }
+        public string[,] GenericResultMassive(ref string[,] result)
+        {
+            string[] MainPrams = new string[] { Zf.ToString(), Zc.ToString(), Ngp.ToString(), modulfc.ToString(), U.ToString() };
+            string[] Ed = new string[] { "Ед", "Ед", "", "", "", "", "", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм", "мм" };
+            string[] Appelation = new string[] { "Zf", "Zc", "NGP", "Mf", "U", "Xf", "Xc", "Df", "Daf", "Dff", "Dc", "Dac", "Dfc", "Sigmacz", "Sigmac", "Bwf", "Bwc", "Bk", "L", "Hob" };
+        result = new string[20,4];
+            for (int i = 0; i < NameParams.Count; i++)
+            {
+                result[i,0] = NameParams[i];
+                result[i, 2] = Ed[i];
+                result[i, 1] = Appelation[i];
+                if (i < 5)
+                    result[i, 3] = MainPrams[i];
+                else if (i < 13)
+                    result[i, 3] = az[i - 5].ToString();
+                else
+                    result[i, 3] = ak[i - 13].ToString();
+
+            }
+            return result;
+        }
         private void Svol2()
         {
             //Вспомогательные переменные для svol2
@@ -322,6 +369,7 @@ namespace Planetary_REDUCT
                     }
                 }
             }
+          Result = GenericResultMassive(ref Result);
 
         
 

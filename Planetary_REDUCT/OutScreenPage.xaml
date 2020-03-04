@@ -5,15 +5,53 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Planetary_REDUCT"
              mc:Ignorable="d" 
-             d:DesignHeight="560" d:DesignWidth="905">
-    <Grid Background="Lavender">
+             d:DesignHeight="560" d:DesignWidth="905" >
+    
+        <UserControl.Resources>
+            
+            <Style TargetType="DataGrid">
+            <Setter Property="RenderOptions.EdgeMode" Value="Aliased"></Setter>
+            <Setter Property="UseLayoutRounding" Value="True"></Setter>
+            <Setter Property="GridLinesVisibility" Value="None"></Setter>
+           
+         
+            </Style>
+        <Style TargetType="DataGridRowHeader">
+            <Setter Property="Width" Value="0"></Setter>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="BorderThickness" Value="1,1,1,1"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+            
+            
 
-        <DataGrid x:Name="ResultGrid" AutoGenerateColumns="True" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Параметр"/>
-                <DataGridTextColumn Header="Значение"></DataGridTextColumn>
-            </DataGrid.Columns>
+     
+        </UserControl.Resources>
+    
+    
+        <Grid  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+            <DataGrid x:Name="ResultGrid" Grid.Column="0"   MinRowHeight="20" AutoGenerateColumns="True"  IsReadOnly="True"   >
+         
+
+
+          
         </DataGrid>
-
+            
+                <StackPanel  Grid.Column="1" VerticalAlignment="Bottom" >
+                 <Button Content="Сохранить" Width="100" Height="25" Margin="25" Click="SaveResult"></Button>
+                <Button Content="Вернуться к рассчетам" Height="25" Width="150" Margin="0,0,0,40" Click="ReturnClick"></Button>
+                
+        </StackPanel>
+        
+       
     </Grid>
 </UserControl>

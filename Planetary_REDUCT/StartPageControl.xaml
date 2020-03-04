@@ -27,9 +27,10 @@
         <TextBlock Text="Название программы" FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center"/>
         <Image Name="ImReductor" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Stretch="Uniform"  Source="Images/Reductor.jpg" ></Image>
         <TextBlock Text="Выберите тип редуктора" FontSize="20" Grid.Row="1"  Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+      
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="*"  />
                 <RowDefinition Height="0.5*" />
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="1.5*"/>
