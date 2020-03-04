@@ -14,7 +14,8 @@
         <Style TargetType="Label">
             <Setter Property="VerticalAlignment" Value="Center"
                 />
-            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="20"/>
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -25,47 +26,51 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
-        </Grid.ColumnDefinitions>
-        
-        <Label Content="Mo" Grid.Column="0" Grid.Row="1"></Label>
-        <Label Content="Mk" Grid.Column="2" Grid.Row="1"></Label>
-        <Label Content="Диапазон модулей" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left"></Label>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
 
-        <Label Content="Tout" Grid.Column="0" Grid.Row="2"></Label>
-        <Label Content="Nout" Grid.Column="2" Grid.Row="2"></Label>
-        <Label Content="Dr" Grid.Column="0" Grid.Row="3"></Label>
-        <Label Content="Haz" Grid.Column="2" Grid.Row="3"></Label>
-        <Label Content="Cz" Grid.Column="0" Grid.Row="4"></Label>
+        
+        <Label Content="Диапазон модулей m Min, Max, мм" Grid.Column="1" Grid.Row="1"></Label>
+          
+        <Label Content="Момент на выходе, H*м" Grid.Column="1" Grid.Row="2" ></Label>
+        <Label Content="Выходная частота, об/мин" Grid.Column="1" Grid.Row="3"></Label>
+        <Label Content="Габаритный размер, мм" Grid.Column="1" Grid.Row="4"></Label>
+        <Label Content="Коэффициент ножки зуба" Grid.Column="1" Grid.Row="5"></Label>
+        <Label Content="Осевой зазор" Grid.Column="1" Grid.Row="6"></Label>
         
         
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=mo,Mode=TwoWay}" ></TextBox>
-        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding Path=mk,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=Tout,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Column="3" Grid.Row="2" Text="{Binding Path=Nout,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=Dr,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Column="3" Grid.Row="3" Text="{Binding Path=Haz,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=Cz,Mode=TwoWay}" ></TextBox>
-        
-        
-        <Canvas Grid.Row="3" Grid.RowSpan="5"  Grid.Column="4">
-            <Button   HorizontalAlignment="Center" Width="100"
-                    Height="30" Margin="20" Content="Очистить" Canvas.Top="50" Canvas.Right="60"/>
-            <Button HorizontalAlignment="Center" Width="100" 
-                    Height="30" Margin="20" Content="Рассчитать" Canvas.Top="100" Canvas.Right="140" Click="CalculatingClick" />
-            <Button HorizontalAlignment="Center" Width="100"
-                    Height="30" Margin="20" Canvas.Top="50" Canvas.Left="100" Content="Пример данных"/>
-            <Button HorizontalAlignment="Center" Width="auto" Click="StartPageClick"
-                    Height="30" Margin="20" Canvas.Top="150" Canvas.Left="130">Вернуться к выбору редуктора</Button>
-        </Canvas >
+        <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Path=mo,Mode=TwoWay}" ></TextBox>
+        <TextBox Grid.Column="4" Grid.Row="1" Text="{Binding Path=mk,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=Tout,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=Nout,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Dr,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="5" Text="{Binding Path=Haz,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="6" Text="{Binding Path=Cz,Mode=TwoWay}" ></TextBox>
+
+            <Button   Grid.Row="4" Grid.Column="6" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="100"
+                    Height="30" Content="Очистить"/>
+            <Button   Grid.Row="4" Grid.Column="6" HorizontalAlignment="Left" Width="100"
+                    Height="30" Content="Пример данных"/>
+
+            <Button Grid.Row="5" Grid.Column="6" HorizontalAlignment="Center" Width="100" 
+                    Height="30" Content="Рассчитать" Click="CalculatingClick" />
+            <Button Grid.Row="6" Grid.Column="6" HorizontalAlignment="Center" Width="auto" Click="StartPageClick"
+                    Height="30">Вернуться к выбору редуктора</Button>
+
+            
         </Grid>
         <Grid x:Name="OutputGrid" Visibility="Collapsed" >
             <local:OutScreenPage x:Name="OutScreenPage"></local:OutScreenPage>

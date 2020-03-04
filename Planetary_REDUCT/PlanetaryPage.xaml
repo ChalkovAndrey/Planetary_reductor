@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="560" d:DesignWidth="905"
              >
-    <Grid>
+    <Grid >
+    <Grid x:Name="InputGrid" Margin="-10,0,9.8,0">
         
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
@@ -19,59 +20,67 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+                <RowDefinition/>
             <RowDefinition Height="0.4*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="0.2*"
-                             />
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" VerticalAlignment="Center" >Повышенная износостойкость
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" VerticalAlignment="Center" >Повышенная износостойкость
             <LineBreak/>
-           и выносливость"</TextBlock>
+           и выносливость</TextBlock>
         <ComboBox Grid.Row="1" Grid.Column="4" Height="30" ></ComboBox>
-        <Label Grid.Row="2" Grid.Column="1" Content="ZaMin" VerticalAlignment="Center" ></Label>
-        <Label Grid.Row="3" Grid.Column="1" Content="ZgMin" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="4" Grid.Column="1" Content="ZfMin" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="5" Grid.Column="1" Content="Nmin" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="6" Grid.Column="1" Content="M1" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="1" Content="U" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="2" Grid.Column="3" Content="ZaMax" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="3" Grid.Column="3" Content="ZyMax" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="4" Grid.Column="3" Content="ZfMax" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="5" Grid.Column="3" Content="NMax" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="6" Grid.Column="3" Content="M2" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="3" Content="DU" VerticalAlignment="Center"></Label>
-        <Label Grid.Row="8" Grid.Column="1" Content="AG" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Content="Число зубьев солнечного колеса - Za Min, Max" VerticalAlignment="Center" ></Label>
+        <Label Grid.Row="3" Grid.Column="1" Content="Число зубьев первого сателлита - Zg Min, Max" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="4" Grid.Column="1" Content="Число зубьев второго сателлита - Zf Min, Max" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="5" Grid.Column="1" Content="Число сателлитов - N Min, Max" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="6" Grid.Column="1" Content="Модуль первой ступени a-g - M1" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="1" Content="Модуль второй ступени f-b - M2" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="1" Content="Передаточное отношение - U" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="9" Grid.Column="1" Content="Допустимая погрешность - DU" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="10" Grid.Column="1" Content="Габаритный размер - AG" VerticalAlignment="Center"></Label>
+        <Label Grid.Row="11" Grid.Column="1" Content="Cуммарный коэффициент смещения ступени a-g - Yd" VerticalAlignment="Center"></Label>
 
-        <TextBox Grid.Row="2" Grid.Column="2" x:Name="Zamin" Width="100" Height="30" Text="{Binding Path=ZaMin, Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="2" x:Name="Zgmin" Width="100" Height="30" Text="{Binding Path= ZgMin,Mode=TwoWay}"></TextBox>
+         <TextBox Grid.Row="2" Grid.Column="2" x:Name="Zamin" Width="100" Height="30" Text="{Binding Path=ZaMin, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="4" x:Name="Zamax"  Width="100" Height="30" Text="{Binding Path=ZaMax,Mode=TwoWay}"></TextBox>
+         <TextBox Grid.Row="3" Grid.Column="2" x:Name="Zgmin" Width="100" Height="30" Text="{Binding Path= ZgMin,Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="4"  x:Name="Zymax" Width="100" Height="30" Text="{Binding Path=ZgMax,Mode=TwoWay}"></TextBox>
         <TextBox Grid.Row="4" Grid.Column="2" x:Name="Zfmin" Width="100" Height="30" Text="{Binding Path=ZfMin,Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="4" x:Name="Zfmax" Width="100" Height="30" Text="{Binding Path=ZfMax,Mode=TwoWay}"></TextBox>
         <TextBox Grid.Row="5" Grid.Column="2" x:Name="Nmin" Width="100" Height="30" Text="{Binding Path=NMin,Mode=TwoWay}"></TextBox>
+             <TextBox Grid.Row="5" Grid.Column="4" x:Name="Nmax"  Width="100" Height="30" Text="{Binding Path=NMax,Mode=TwoWay}" ></TextBox>
         <TextBox Grid.Row="6" Grid.Column="2" x:Name="m1" Width="100" Height="30" Text="{Binding Path=M1,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="7" Grid.Column="2" x:Name="u" Width="100" Height="30" Text="{Binding Path=UT,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="8" Grid.Column="2" x:Name="ag" Width="100" Height="30" Text="{Binding Path=ag, Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="2" Grid.Column="4" x:Name="Zamax"  Width="100" Height="30" Text="{Binding Path=ZaMax,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="4"  x:Name="Zymax" Width="100" Height="30" Text="{Binding Path=ZgMax,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="4" x:Name="Zfmax" Width="100" Height="30" Text="{Binding Path=ZfMax,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="4" x:Name="Nmax"  Width="100" Height="30" Text="{Binding Path=NMax,Mode=TwoWay}" ></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="4" x:Name="m2"  Width="100" Height="30" Text="{Binding Path=M2,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="7" Grid.Column="4" x:Name="DU" Width="100" Height="30" Text="{Binding Path=du,Mode=TwoWay}"></TextBox>
-       
-        <Canvas Grid.Row="5" Grid.RowSpan="5"  Grid.Column="6">
-            <Button   HorizontalAlignment="Center" Width="100"
-                    Height="30" Margin="20" Content="Очистить" Canvas.Top="50" Canvas.Right="100"/>
-            <Button HorizontalAlignment="Center" Width="100" 
-                    Height="30" Margin="20" Content="Рассчитать" Canvas.Top="100" Canvas.Right="160" Click="CalculatingClick" />
-            <Button HorizontalAlignment="Center" Width="100"
-                    Height="30" Margin="20" Canvas.Top="50" Canvas.Left="100" Content="Пример данных"/>
-            <Button HorizontalAlignment="Center" Width="auto" Click="StartPageClick"
-                    Height="30" Margin="20" Canvas.Top="150" Canvas.Left="124">Вернуться к выбору редуктора</Button>
-        </Canvas >
+        <TextBox Grid.Row="7" Grid.Column="2" x:Name="m2"  Width="100" Height="30" Text="{Binding Path=M2,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="8" Grid.Column="2" x:Name="u" Width="100" Height="30" Text="{Binding Path=UT,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="9" Grid.Column="2" x:Name="DU" Width="100" Height="30" Text="{Binding Path=du,Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="10" Grid.Column="2" x:Name="ag" Width="100" Height="30" Text="{Binding Path=ag, Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="11" Grid.Column="2" x:Name="Yd" Width="100" Height="30" Text="{Binding Path=YD,Mode=TwoWay}"></TextBox>
+
+            <Button  Grid.Row="9" Grid.Column="6" HorizontalAlignment="Left" Width="100"
+                    Height="30" Content="Очистить"/>
+            <Button Grid.Row="9" Grid.Column="6" HorizontalAlignment="Right" Width="100"
+                    Height="30" Content="Пример данных"/>
+            <Button Grid.Row="10" Grid.Column="6" HorizontalAlignment="Center" Width="100" 
+                    Height="30" Content="Рассчитать" Click="CalculatingClick" />
+            <Button Grid.Row="11" Grid.Column="6" HorizontalAlignment="Center" Width="auto" Click="StartPageClick"
+                    Height="30">Вернуться к выбору редуктора</Button>
+            <!--
+           
+            
+            -->
+        
+    </Grid>
+    <Grid Name="OutputGrid" Visibility="Collapsed">
+        <local:OutScreenPage></local:OutScreenPage>
+    </Grid>
     </Grid>
 </UserControl>

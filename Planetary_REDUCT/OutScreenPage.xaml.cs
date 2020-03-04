@@ -23,7 +23,7 @@ namespace Planetary_REDUCT
     {
         
 
-        DataTable data;
+       public DataTable data;
        
         public OutScreenPage()
         {
@@ -49,7 +49,12 @@ namespace Planetary_REDUCT
           
 
         }
-        public void LoadData(Wave wave)
+        public void SetTable (DataTable table)
+        {
+            data = table;
+            ResultGrid.ItemsSource = data.DefaultView;
+        }
+        public void LoadWaveData(Wave wave)
         {
             for (int i = 0; i < wave.NameParams.Count; i++)
             {

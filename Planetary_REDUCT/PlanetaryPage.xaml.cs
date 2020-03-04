@@ -20,18 +20,23 @@ namespace Planetary_REDUCT
     /// </summary>
     public partial class PlanetaryPage : UserControl
     {
+        OutScreenPage outScreenPage;
+        DBHelper dB;
         public delegate void MainFunctions();
-        Planet test { get;set; }
+        Planet planet { get;set; }
         public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         public PlanetaryPage()
         {
             InitializeComponent();
-            test = new Planet()
+             outScreenPage = (OutScreenPage)OutputGrid.Children[0];
+            planet = new Planet()
             {
                
             };
-           
-            this.DataContext = test;
+            dB = new DBHelper();
+            dB.CreateTable();
+            outScreenPage.SetTable(dB.Table);
+            this.DataContext = planet;
         }
        void StartPageClick (Object sender,EventArgs e)
         {
@@ -40,11 +45,25 @@ namespace Planetary_REDUCT
         }
         public void CalculatingClick(Object sender, EventArgs e)
         {
-            MessageBox.Show(test.ZaMin.ToString());
-            test.ZTMM46();
-            MessageBox.Show("Za = " + test.Za.ToString() + " Zb = " + test.Zb.ToString() + " /n Zg = " + test.Zg.ToString() + " Zf = " + test.Zf.ToString() + " N = " + test.N.ToString());
-            test = new Planet();
-            this.DataContext = test;
+            
+         
+            planet.ZTMM46();
+            
+           
+            dB.InsertParams(Planet.Result);
+            outScreenPage.SetTable(dB.Table);
+            dB.UpdateDB();
+            
+            InputGrid.Visibility = Visibility.Collapsed;
+        
+           
+            OutputGrid.Visibility = Visibility.Visible;
+           
+          
+        
+            Planet.Result.Clear();
+
+
 
         }
     }
