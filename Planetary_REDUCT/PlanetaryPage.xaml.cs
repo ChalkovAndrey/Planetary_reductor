@@ -34,6 +34,7 @@ namespace Planetary_REDUCT
                
             };
             dB = new DBHelper();
+           
             dB.CreateTable();
             outScreenPage.SetTable(dB.Table);
             this.DataContext = planet;
@@ -66,6 +67,12 @@ namespace Planetary_REDUCT
 
 
 
+        }
+
+        private void ExampleClick(object sender, RoutedEventArgs e)
+        {
+
+            planet.SetExample();
         }
     }
    

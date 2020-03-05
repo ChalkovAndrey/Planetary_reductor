@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-public class Planet
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+public class Planet:INotifyPropertyChanged
 {   //-------------------------------РАССЧИТЫВАЕТСЯ МЕТОДАМИ---------------------------------------------------
     public int Za, Zb, Zg, Zf, N; // Z1 - число зубьев солнечного, Z2 - число зубьев сателлита
                                    //Z3 - число зубьев короны, N - число сателлитов, m - модуль ступени
@@ -10,31 +13,41 @@ public class Planet
 
 
     //-----------------------------------------ВВОДИТСЯ ИЗ ИНТЕРФЕЙСА-----------------------------------------
-    public int ZaMin { get; set; }
-  public static  List<string> Result = new List<string>(13);
-    
-    public int ZaMax { get; set; }
-    public int ZgMin { get; set; }
-    public int ZgMax { get; set; }
-    public int ZfMin { get; set; }
-    public int ZfMax { get; set; }
-    public int NMin { get; set; }
-    public int NMax { get; set; }
-
-    public double M1 { get; set; }
-    public double M2 { get; set; }
-    //=======
-    //public float M1 { get; set; }
-    //public float M2 { get; set; }
-    ////>>>>>>> raschet
-    public double du { get; set; }
-    public double UT { get; set; }
-    public double ag { get; set; }
-    public double HAZ { get; set; }
-    public double CZ { get; set; }
-    public double YD { get; set; }
+  
+    private int zamin;
+    public int ZaMin { get { return zamin; } set { zamin = (int)value; OnPropertyChanged(); } }
+    public static List<string> Result = new List<string>(13);
+    private int zamax;
+    public int ZaMax { get { return zamax; } set { zamax = value; OnPropertyChanged(); } }
+    private int zgmin;
+    public int ZgMin { get { return zgmin; } set { zgmin = value; OnPropertyChanged(); } }
+    private int zgmax;
+    public int ZgMax { get { return zgmax; } set { zgmax = value; OnPropertyChanged(); } }
+    private int zfmin;
+    public int ZfMin { get { return zfmin; } set { zfmin = value; OnPropertyChanged(); } }
+    private int zfmax;
+    public int ZfMax { get { return zfmax; } set { zfmax = value; OnPropertyChanged(); } }
+    private int nMin;
+    public int NMin { get { return nMin; } set { nMin = value; OnPropertyChanged(); } }
+    private int nMax;
+    public int NMax { get { return nMax; } set { nMax = value; OnPropertyChanged(); } }
+    private double m1;
+    public double M1 { get { return m1; } set {  m1 = value; OnPropertyChanged(); } }
+    private double m2;
+    public double M2 { get { return m2; } set { m2 = value; OnPropertyChanged(); } }
+    private double _du;
+    public double du { get { return _du; } set { _du = value; OnPropertyChanged(); } }
+    private double ut;
+    public double UT { get { return ut; } set { ut = value; OnPropertyChanged(); } }
+    private double _ag;
+    public double ag { get { return _ag; } set { _ag = value; OnPropertyChanged(); } }
+    private double haz;
+    public double HAZ { get { return haz; } set { haz = value; OnPropertyChanged(); } }
+    private double cz;
+    public double CZ { get { return cz; } set { cz = value; OnPropertyChanged(); } }
+    private double yd;
+    public double YD { get { return yd; } set { yd = value; OnPropertyChanged(); } }
     public bool LTR;
-    
 
     private double DU; //UT - требуемое передаточное отношение, du - требуемая погрешность, ag - требуемый габарит
     private int LTR1, LTR2; // Маркеры для ответвления в расчетах
@@ -74,8 +87,20 @@ public class Planet
     }
 
 
-
-
+    public void SetExample()
+    {
+        ZaMin = 18;
+        ZaMax = 30;
+        ZgMin = 25;
+        ZgMax = 65;
+        ZfMin = 22;
+        ZfMax = 40;
+        M1 = 0.4;
+        M2 = 0.5;
+        NMin = 2;
+        NMax = 4;
+        UT = 15; du = 7; ag = 60; YD = 0.5; HAZ = 1; CZ = 0.25;
+    }
 
     //------------------------------------------------------------АРГУМЕНТЫ ОПИСАННЫХ НИЖЕ ФУНКЦИЙ--------------------------------------------------
     //Zsol - число зубьев солнечного колеса, Zs1 - число зубьев сателлита, сцепленного с солнцем, Zs2 - число зубьев сателлита, сцепленного с короной, Zk - число зубьев короны
@@ -198,6 +223,13 @@ public class Planet
     M200: N = NW;
         SetResult();
 
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+    public void OnPropertyChanged([CallerMemberName]string prop = "")
+    {
+        if (PropertyChanged != null)
+            PropertyChanged(this, new PropertyChangedEventArgs(prop));
     }
 
 
