@@ -77,6 +77,19 @@
                         <TextBlock Margin="3">Сведения о разработчиках</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <TextBlock FontFamily="Times New Roman" FontSize="14">
+                    --Участники проекта--<LineBreak></LineBreak>
+                      <LineBreak></LineBreak>
+                    Студенты РТУ МИРЭА:<LineBreak></LineBreak>
+                    Пищиков Н.А.<LineBreak></LineBreak>
+                    Чалков А.А.<LineBreak></LineBreak>
+                    Карп Г.В.<LineBreak></LineBreak>
+                      <LineBreak></LineBreak>
+                    Руководитель проекта:<LineBreak></LineBreak>
+                    Пименов А.В. - к.т.н.,доцент.<LineBreak></LineBreak>
+                      <LineBreak></LineBreak>
+                    ------Москва 2020-------
+                </TextBlock>
             </TabItem>
 
         </TabControl>

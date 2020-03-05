@@ -45,8 +45,9 @@ namespace Planetary_REDUCT
         }
         public void CalculatingClick(Object sender, EventArgs e)
         {
-            
-         
+           
+            if (((TextBlock)ltr_choice.SelectedItem).Text == "Да") planet.LTR = true; else planet.LTR = false;
+           
             planet.ZTMM46();
             
            

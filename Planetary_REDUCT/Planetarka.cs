@@ -30,17 +30,21 @@ public class Planet
     public double du { get; set; }
     public double UT { get; set; }
     public double ag { get; set; }
+    public double HAZ { get; set; }
+    public double CZ { get; set; }
+    public double YD { get; set; }
+    public bool LTR;
+    
+
     private double DU; //UT - требуемое передаточное отношение, du - требуемая погрешность, ag - требуемый габарит
     private int LTR1, LTR2; // Маркеры для ответвления в расчетах
-
-    private bool LTR;
 
  //-----------------------------------------------------------------------------------------------------------
 
 
 //------------------------------------СЕРВИСНЫЕ ПЕРЕМЕННЫЕ (ИСПОЛЬЗУЮТСЯ ТОЛЬКО В РАСЧЕТЕ------------------------
     private int IP, KA, KG, KF, KB, NW, JPR, MPR; // JPR, MPR - индикаторы
-    private double Da,Db, Dg, Df, DR1, DR2, DR, AW, Uvr, Y, YD=1, D1, D2, ALF, HAZ, CZ;
+    private double Da,Db, Dg, Df, DR1, DR2, DR, AW, Uvr, Y, D1, D2, ALF;
 
     private int KPZ; // Управляющий признак, вводится(определяется по картинке в интерфейсе
 
@@ -125,15 +129,12 @@ public class Planet
 
     public void ZTMM46()
     {
-        LTR1 = 1;
-        LTR2 = 1;
-       // YD = 0;
+
+
 
         //ZaMin = 20;ZaMax = 30; ZgMin = 25;ZgMax =50; ZfMin = 22; ZfMax = 40; M1 = 0.5;M2 = 0.5; NMin = 2; NMax = 3; UT = 9; du = 10; ag = 60;
-        //ZaMin = 18; ZaMax = 30; ZgMin = 25; ZgMax = 65; ZfMin = 22; ZfMax = 40; M1 = 0.4; M2 = 0.5; NMin = 2; NMax = 4; UT = 15; du = 7; ag = 60;
-        HAZ = 1;
-        CZ = 0.25;
-        LTR = true;
+        //ZaMin = 18; ZaMax = 30; ZgMin = 25; ZgMax = 65; ZfMin = 22; ZfMax = 40; M1 = 0.4; M2 = 0.5; NMin = 2; NMax = 4; UT = 15; du = 7; ag = 60; YD = 0.5; HAZ = 1; CZ = 0.25;
+       // LTR = false;
 
         for (NW = NMin; NW < NMax; NW++)
         {

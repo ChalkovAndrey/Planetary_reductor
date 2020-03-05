@@ -9,13 +9,18 @@
     <UserControl.Resources>
         <Style TargetType="TextBox">
             <Setter Property="Height" Value="30"/>
-            <Setter Property="Width" Value="100"/>
+            <Setter Property="Width" Value="50"/>
         </Style>
         <Style TargetType="Label">
             <Setter Property="VerticalAlignment" Value="Center"
                 />
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Padding" Value="20"/>
+            <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
         </Style>
     </UserControl.Resources>
     <Grid>
