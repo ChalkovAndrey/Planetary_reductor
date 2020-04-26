@@ -141,7 +141,7 @@ public class Planet:INotifyPropertyChanged
         Da = Math.Round(M1 * Za,2);
         Dg = Math.Round(M1 * Zg,2);
         Aw1 = Math.Round((Da + Dg) / 2,2);
-        DR1 = Math.Round(Aw1 + Dg,2);
+        DR1 = Math.Round(Aw1 + Dg/2,2);//!!!!!!!!
     }
 
     private void GeomParamSolnKOR()//вычисление геометрических параметров ступени сателлит2-корона
