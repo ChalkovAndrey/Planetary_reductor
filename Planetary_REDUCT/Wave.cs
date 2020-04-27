@@ -124,13 +124,24 @@ namespace Planetary_REDUCT
 
         public void SetExample()
         {
-            INo = 1;
-            INk = 3;
-            Itout = 125;
-            Inout = 35;
-            Idr = 70;
-            Ihaz = 1;
-            Icz = 0.25;
+            INo     = 1;
+            INk     = 3;
+            Itout   = 125;
+            Inout   = 35;
+            Idr     = 70;
+            Ihaz    = 1;
+            Icz     = 0.25;
+        }
+
+        public void ClearInput()
+        {
+            INo     = 0;
+            INk     = 0;
+            Itout   = 0;
+            Inout   = 0;
+            Idr     = 0;
+            Ihaz    = 0;
+            Icz     = 0;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

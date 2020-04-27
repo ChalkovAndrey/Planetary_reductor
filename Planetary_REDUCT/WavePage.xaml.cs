@@ -50,9 +50,12 @@ namespace Planetary_REDUCT
 
         private void ExampleClick(object sender, RoutedEventArgs e)
         {
-
             wave.SetExample();
         }
 
+        private void ClearClick(object sender, RoutedEventArgs e)
+        {
+            wave.ClearInput();
+        }
     }
 }
