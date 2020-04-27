@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Planetary_REDUCT
 {
 
   
   
-  public  class Wave
+  public  class Wave : INotifyPropertyChanged
     {//---------------------------------------Р РђРЎРЎР§РРўР«Р’РђР®РўРЎРЇ Р’ РњР•РўРћР”РђРҐ----------------------------------------------------
         public List<string> NameParams { get; set; } = new List<string> { "Число зубьев колеса f", "Число зубьев колеса с",
             "Номер гибкого подшипника", "Модуль ступени", "Передаточное отношение","Коэффициент смещения колеса F",
@@ -70,12 +72,18 @@ namespace Planetary_REDUCT
 
         //U - РїРµСЂРµРґР°С‚РѕС‡РЅРѕРµ РѕС‚РЅРѕС€РµРЅРёРµ РІРѕР»РЅРѕРІРѕРіРѕ СЂРµРґСѓРєС‚РѕСЂР°
         //Dgp - РґРёР°РјРµС‚СЂ РіРёР±РєРѕРіРѕ РїРѕРґС€РёРїРЅРёРєР°
-        
+
 
         //--------------------------------------------------ВВОДЯТСЯ В ИНТЕРФЕЙСЕ-------------------------------------------------------
-        
 
 
+        public double INo    { get { return mo;   } set { mo    = (double)value; OnPropertyChanged("INo"); } }
+        public double INk    { get { return mk;   } set { mk    = (double)value; OnPropertyChanged("INk"); } }
+        public double Itout  { get { return Tout; } set { Tout  = (double)value; OnPropertyChanged("Itout"); } }
+        public double Inout  { get { return Nout; } set { Nout  = (double)value; OnPropertyChanged("Inout"); } }
+        public double Idr    { get { return Dr;   } set { Dr    = (double)value; OnPropertyChanged("Idr"); } }
+        public double Ihaz   { get { return Haz;  } set { Haz   = (double)value; OnPropertyChanged("Ihaz"); } }
+        public double Icz    { get { return Cz;   } set { Cz    = (double)value; OnPropertyChanged("Icz"); } }
 
         //PR - номер схемы механнизма для выбора формулы расчета передаточного (будет выбираться по картинке и кнопке)
         //Tout - вращательный момент нагрузки
@@ -86,13 +94,13 @@ namespace Planetary_REDUCT
         public int PR { get; set; } = 1;//выбор схемы, которого нет
         //public int No { get; set; }
         //public int Nk { get; set; }
-        public double mo { get; set; }
-        public double mk { get; set; }
-        public double Tout { get; set; }
-        public double Nout{get;set;}
-        public double Dr { get; set; }
-        public double Haz { get; set; }
-        public double Cz { get; set; }
+        public double mo    { get; set; }
+        public double mk    { get; set; }
+        public double Tout  { get; set; }
+        public double Nout  { get; set; }
+        public double Dr    { get; set; }
+        public double Haz   { get; set; }
+        public double Cz    { get; set; }
 
       
         
@@ -100,20 +108,37 @@ namespace Planetary_REDUCT
         //--------------------------------------------------СЛУЖЕБНЫЕ------------------------------------------
 
 
-        private double haz, cz;// исходный производящий контур
-        private int IP;//индиктор для расчетов
-        private double dfpp;//проектный диаметр гибкого подшипника. определяется в блоке конструирования внизу
-        private double Dp;//проектный наружный диаметр гибкого подшипника. определяется в блоке конструирования внизу
+        private double  haz, cz;// исходный производящий контур
+        private int     IP;//индиктор для расчетов
+        private double  dfpp;//проектный диаметр гибкого подшипника. определяется в блоке конструирования внизу
+        private double  Dp;//проектный наружный диаметр гибкого подшипника. определяется в блоке конструирования внизу
                           //double dp;//диаметр подшипника 19.02.20 добавлено и закомментировано
-        private double ngp;//переменная частоты вращения подшипника. Используется для проверки допустимости подшипника
-        private double ngpp;//переменная предельной частоты вращения выбранного подшипника. Используется для проверки допустимости подшипника.
+        private double  ngp;//переменная частоты вращения подшипника. Используется для проверки допустимости подшипника
+        private double  ngpp;//переменная предельной частоты вращения выбранного подшипника. Используется для проверки допустимости подшипника.
 
-        private double sm;//временный модуль. потом перепишется в modulfc
+        private double  sm;//временный модуль. потом перепишется в modulfc
 
 
 
         // SVOL2 - выбор гибкого подшипника по ГОСТ
 
+        public void SetExample()
+        {
+            INo = 1;
+            INk = 3;
+            Itout = 125;
+            Inout = 35;
+            Idr = 70;
+            Ihaz = 1;
+            Icz = 0.25;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
 
         public void ResetData()
         {

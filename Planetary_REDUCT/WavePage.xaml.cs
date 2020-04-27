@@ -48,6 +48,11 @@ namespace Planetary_REDUCT
             mainWindow.StartPageCall();
         }
 
-       
+        private void ExampleClick(object sender, RoutedEventArgs e)
+        {
+
+            wave.SetExample();
+        }
+
     }
 }
