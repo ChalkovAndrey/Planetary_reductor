@@ -23,50 +23,44 @@ namespace Planetary_REDUCT
         OutScreenPage outScreenPage;
         DBHelper dB;
         public delegate void MainFunctions();
-        Planet planet { get;set; }
+        Planet planet { get; set; }
         public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         public PlanetaryPage()
         {
             InitializeComponent();
-             outScreenPage = (OutScreenPage)OutputGrid.Children[0];
+            outScreenPage = (OutScreenPage)OutputGrid.Children[0];
             planet = new Planet()
             {
-               
+
             };
             dB = new DBHelper();
-           
+
             dB.CreateTable();
             outScreenPage.SetTable(dB.Table);
             this.DataContext = planet;
         }
-       void StartPageClick (Object sender,EventArgs e)
+        void StartPageClick(Object sender, EventArgs e)
         {
             Visibility = Visibility.Collapsed;
             mainWindow.StartPageCall();
         }
         public void CalculatingClick(Object sender, EventArgs e)
         {
-           
-            if (((TextBlock)ltr_choice.SelectedItem).Text == "Да") planet.LTR = true; else planet.LTR = false;
-           
             planet.ZTMM46();
-            
-           
+
+
             dB.InsertParams(Planet.Result);
             outScreenPage.SetTable(dB.Table);
             dB.UpdateDB();
-            
+
             InputGrid.Visibility = Visibility.Collapsed;
-        
-           
+
+
             OutputGrid.Visibility = Visibility.Visible;
-           
-          
-        
+
+
+
             Planet.Result.Clear();
-
-
-
         }
 
         private void ExampleClick(object sender, RoutedEventArgs e)
@@ -74,6 +68,16 @@ namespace Planetary_REDUCT
 
             planet.SetExample();
         }
+
+        private void ltr_Checked(object sender, RoutedEventArgs e)
+        {
+            planet.LTR = true;
+        }
+
+        private void ltr_Unchecked(object sender, RoutedEventArgs e)
+        {
+            planet.LTR = false;
+        }
     }
-   
+
 }

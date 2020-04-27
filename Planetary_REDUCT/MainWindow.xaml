@@ -7,6 +7,7 @@
         xmlns:uc="Planetary_REDUCT.StartPageControl"
         mc:Ignorable="d"
         Title="Расчет планетарных и волновых редукторов 2.0" Height="560" Width="905" >
+
     <Grid>
 
 
@@ -28,28 +29,40 @@
 
 
                 </TabItem.Content>
-                
+
 
             </TabItem>
-            <TabItem x:Name="opisalgor"> 
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
+            <TabItem x:Name="opisalgor">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="3">Описание алгоритмов</TextBlock>
                     </StackPanel>
-                    </TabItem.Header>
-                <Grid>
-                    
-                </Grid>
-                </TabItem>
+                </TabItem.Header>
+                <ScrollViewer>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="Algoritm" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
             <TabItem x:Name="opismatmod" >
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="3">Описание матмодели</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid>
-                    
-                </Grid>
+                <ScrollViewer>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="MathModel">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollViewer>
             </TabItem>
             <TabItem x:Name="opisprogr">
                 <TabItem.Header>
@@ -57,9 +70,15 @@
                         <TextBlock Margin="3">Описание программы</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid>
-                    
-                </Grid>
+                <ScrollViewer>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="ProgramSpecification">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollViewer>
             </TabItem>
             <TabItem x:Name="rucovodpolz">
                 <TabItem.Header>
@@ -67,9 +86,15 @@
                         <TextBlock Margin="3">Руководство пользователя</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid>
-                    
-                </Grid>
+                <ScrollViewer>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="UserGuide">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollViewer>
             </TabItem>
             <TabItem x:Name="developers">
                 <TabItem.Header>
@@ -93,10 +118,10 @@
             </TabItem>
 
         </TabControl>
-    
-        
+
+
     </Grid>
-   
-       
-    
+
+
+
 </Window>
