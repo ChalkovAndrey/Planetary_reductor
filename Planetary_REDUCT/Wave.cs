@@ -124,8 +124,8 @@ namespace Planetary_REDUCT
 
         public void SetExample()
         {
-            INo     = 1;
-            INk     = 3;
+            INo     = 0.3;
+            INk     = 1;
             Itout   = 125;
             Inout   = 35;
             Idr     = 70;
