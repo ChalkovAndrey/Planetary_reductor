@@ -78,6 +78,11 @@ namespace Planetary_REDUCT
         {
             planet.LTR = false;
         }
+
+        private void ClearClick(object sender, RoutedEventArgs e)
+        {
+            planet.ClearInput();
+        }
     }
 
 }

@@ -82,7 +82,7 @@
             <TextBox Grid.Row="4" Grid.Column="6" x:Name="cz" Width="50" Height="30" HorizontalAlignment="Right" Text="{Binding Path=CZ,Mode=TwoWay}"></TextBox>
 
             <Button  Grid.Row="9" Grid.Column="6" HorizontalAlignment="Left" Width="100"
-                    Height="30" Content="Очистить"/>
+                    Height="30" Content="Очистить" Click="ClearClick"/>
             <Button Grid.Row="9" Grid.Column="6" HorizontalAlignment="Right" Width="100"
                     Height="30" Content="Пример данных" Click="ExampleClick"/>
             <Button Grid.Row="10" Grid.Column="6" HorizontalAlignment="Center" Width="100" 
