@@ -55,7 +55,13 @@ namespace Planetary_REDUCT
 
         private void ClearClick(object sender, RoutedEventArgs e)
         {
+            ClearFields();   
+        }
+
+        public void ClearFields()
+        {
             wave.ClearInput();
+            for (int i = 6; i <= 12; i++) ((TextBox)InputGrid.Children[i]).Text = "";
         }
     }
 }
