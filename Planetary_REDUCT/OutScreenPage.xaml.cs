@@ -81,8 +81,7 @@ namespace Planetary_REDUCT
             Grid s = (Grid)w.Parent;
             s.Children[0].Visibility = Visibility.Visible;
             data.Clear();
-          
-
+         
         }
     }
    

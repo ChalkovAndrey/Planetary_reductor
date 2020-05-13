@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using UserControlFun;
 
 namespace Planetary_REDUCT
 {
@@ -55,7 +55,15 @@ namespace Planetary_REDUCT
 
         private void ClearClick(object sender, RoutedEventArgs e)
         {
+            ClearFields();   
+        }
+
+        public void ClearFields()
+        {
             wave.ClearInput();
+            ((RangeSlider)InputGrid.Children[6]).LowerValue = 0;
+            ((RangeSlider)InputGrid.Children[6]).UpperValue = 0;
+            for (int i = 9; i <= 13; i++) ((TextBox)InputGrid.Children[i]).Text = "";
         }
     }
 }

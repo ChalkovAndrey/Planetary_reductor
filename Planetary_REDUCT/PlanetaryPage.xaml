@@ -63,13 +63,13 @@
             <Label Grid.Row="3" Grid.Column="6" Content="Коэффициент ножки зуба" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             <Label Grid.Row="4" Grid.Column="6" Content="Осевой зазор" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             <Label Grid.Row="2" Grid.Column="6" Content="Параметры исходного контура:" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-
+            
             <TextBox Grid.Row="2" Grid.Column="2" x:Name="Zamin" Width="50" Height="30" Text="{Binding Path=ZaMin, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="2" Grid.Column="4" x:Name="Zamax"  Width="50" Height="30" Text="{Binding Path=ZaMax,Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="3" Grid.Column="2" x:Name="Zgmin" Width="50" Height="30" Text="{Binding Path= ZgMin,Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="3" Grid.Column="4"  x:Name="Zymax" Width="50" Height="30" Text="{Binding Path=ZgMax,Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="4" Grid.Column="2" x:Name="Zfmin" Width="50" Height="30" Text="{Binding Path=ZfMin,Mode=TwoWay}"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="4" x:Name="Zfmax" Width="50" Height="30" Text="{Binding Path=ZfMax,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="4" x:Name="Zfmax" Width="50" Height="30" Text="{Binding Path=ZfMax,Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="5" Grid.Column="2" x:Name="Nmin" Width="50" Height="30" Text="{Binding Path=NMin,Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="5" Grid.Column="4" x:Name="Nmax"  Width="50" Height="30" Text="{Binding Path=NMax,Mode=TwoWay}" ></TextBox>
             <TextBox Grid.Row="6" Grid.Column="2" x:Name="m1" Width="50" Height="30" Text="{Binding Path=M1,Mode=TwoWay}"></TextBox>

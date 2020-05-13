@@ -34,7 +34,6 @@ namespace Planetary_REDUCT
 
             };
             dB = new DBHelper();
-
             dB.CreateTable();
             outScreenPage.SetTable(dB.Table);
             this.DataContext = planet;
@@ -79,9 +78,19 @@ namespace Planetary_REDUCT
             planet.LTR = false;
         }
 
-        private void ClearClick(object sender, RoutedEventArgs e)
+        public void ClearFields()
         {
             planet.ClearInput();
+            for (int i = 15; i <= 30; i++) ((TextBox)InputGrid.Children[i]).Text = "";
+        }
+
+        private void ClearClick(object sender, RoutedEventArgs e)
+        {
+            ClearFields();
+        }
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ((Slider)sender).SelectionEnd = e.NewValue;
         }
     }
 

@@ -9,12 +9,21 @@ Planetary_REDUCT
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\App.xaml
 5-1995453878
 
 13-1735447506
 76-1046532403
 MainWindow.xaml;OutScreenPage.xaml;PlanetaryPage.xaml;StartPageControl.xaml;WavePage.xaml;
+=======
+C:\Users\v8926\Documents\4 семестр\ТППИ\Reductor_v2_0\Planetary_reductor\Planetary_REDUCT\App.xaml
+6-1266864127
+
+14-2124619431
+76-1464998047
+MainWindow.xaml;OutScreenPage.xaml;PlanetaryPage.xaml;RangeSlider.xaml;StartPageControl.xaml;WavePage.xaml;
+>>>>>>> 049152967ca807ca8596eec52673838b88e259a7
 
 False
 

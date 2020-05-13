@@ -112,5 +112,10 @@ C:\Users\v8926\Documents\4 семестр\ТППИ\Reductor_v2_0\Planetary_reduc
 C:\Users\v8926\Documents\4 семестр\ТППИ\Reductor_v2_0\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.CopyComplete
 C:\Users\v8926\Documents\4 семестр\ТППИ\Reductor_v2_0\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.exe
 C:\Users\v8926\Documents\4 семестр\ТППИ\Reductor_v2_0\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.pdb
+<<<<<<< HEAD
 D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\bin\Debug\System.Runtime.WindowsRuntime.dll
 D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\bin\Debug\Windows.winmd
+=======
+C:\Users\v8926\Documents\4 семестр\ТППИ\Reductor_v2_0\Planetary_reductor\Planetary_REDUCT\obj\Debug\RangeSlider.baml
+C:\Users\v8926\Documents\4 семестр\ТППИ\Reductor_v2_0\Planetary_reductor\Planetary_REDUCT\obj\Debug\RangeSlider.g.cs
+>>>>>>> 049152967ca807ca8596eec52673838b88e259a7

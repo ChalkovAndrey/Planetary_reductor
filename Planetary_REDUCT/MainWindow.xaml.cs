@@ -44,6 +44,7 @@ namespace Planetary_REDUCT
         public void PlanetaryCall()
         {
             PlanetaryPage.Visibility = Visibility.Visible;
+            PlanetaryPage.ClearFields();
         }
         public void StartPageCall()
         {
@@ -52,6 +53,7 @@ namespace Planetary_REDUCT
         public void WaveCall()
         {
             WavePage.Visibility = Visibility.Visible;
+            WavePage.ClearFields();
         }
 
         private async void CreatePDFpage(Image imageObject, uint pageNumber)
