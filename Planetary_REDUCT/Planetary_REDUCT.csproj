@@ -90,6 +90,7 @@
       <DependentUpon>OutScreenPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Planetarka.cs" />
+    <Compile Include="RangeSlider.xaml.cs" />
     <Compile Include="raschet.cs" />
     <Compile Include="PlanetaryPage.xaml.cs">
       <DependentUpon>PlanetaryPage.xaml</DependentUpon>
@@ -120,6 +121,10 @@
     <Page Include="PlanetaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RangeSlider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="StartPageControl.xaml">
       <SubType>Designer</SubType>
