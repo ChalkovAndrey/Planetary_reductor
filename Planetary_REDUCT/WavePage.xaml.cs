@@ -22,7 +22,7 @@ namespace Planetary_REDUCT
     /// </summary>
     public partial class WavePage : UserControl
     {
-      public Wave wave;
+        public Wave wave;
         public MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         public WavePage()
         {
@@ -30,17 +30,23 @@ namespace Planetary_REDUCT
             wave = new Wave { };
             this.DataContext = wave;
         }
-       private void CalculatingClick(Object sender, RoutedEventArgs e)
+        private void CalculatingClick(Object sender, RoutedEventArgs e)
         {
+            if (wave.Cz > 1 || wave.Cz < 0.1 || wave.Tout > 500 || wave.Tout < 30 || wave.Nout > 400
+               || wave.mo < 0.1 || wave.mo > 1 || wave.mk > 1 || wave.mk < 0.1 || wave.Dr > 1000 || wave.Dr < 20)
+            {
+                MessageBox.Show("Данные введены неверно.");
+                return;
+            }
             wave.Construction();
             InputGrid.Visibility = Visibility.Collapsed;
             OutScreenPage outScreenPage = (OutScreenPage)OutputGrid.Children[0];
             outScreenPage.LoadWaveData(wave);
-          OutputGrid.Visibility = Visibility.Visible;
+            OutputGrid.Visibility = Visibility.Visible;
             wave.ResetData();
             //wave = new Wave { };
             //this.DataContext = wave;
-           // MessageBox.Show("Zf =" +wave.Zf.ToString() + "Zc = " + wave.Zc.ToString() + "Ngp = " +wave.Ngp.ToString() + "Modul = " + wave.modulfc);
+            // MessageBox.Show("Zf =" +wave.Zf.ToString() + "Zc = " + wave.Zc.ToString() + "Ngp = " +wave.Ngp.ToString() + "Modul = " + wave.modulfc);
         }
         void StartPageClick(Object sender, EventArgs e)
         {
@@ -55,9 +61,24 @@ namespace Planetary_REDUCT
 
         private void ClearClick(object sender, RoutedEventArgs e)
         {
-            ClearFields();   
+            ClearFields();
         }
-
+        private void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!(Char.IsDigit(e.Text, 0) || (e.Text == ".")
+               && (!(((TextBox)sender).Text.Contains("."))
+               && e.Text.Length != 0)))
+            {
+                e.Handled = true;
+            }
+        }
+        private void textBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+        }
         public void ClearFields()
         {
             wave.ClearInput();

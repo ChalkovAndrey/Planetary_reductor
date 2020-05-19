@@ -45,6 +45,11 @@ namespace Planetary_REDUCT
         }
         public void CalculatingClick(Object sender, EventArgs e)
         {
+            if (planet.M1 > 1 || planet.M2 > 1 || planet.ZgMin < 8 || planet.ZfMin < 8 || planet.ZaMin < 8 || planet.UT > 16 || planet.UT < 4 || planet.ag < 10 || planet.ag > 600 || planet.CZ > 1 || planet.CZ < 0.1 || planet.NMin < 1 || planet.NMax > 11)
+            {
+                MessageBox.Show("Данные введены неверно.");
+                return;
+            }
             planet.ZTMM46();
 
 
@@ -92,6 +97,23 @@ namespace Planetary_REDUCT
         {
             ((Slider)sender).SelectionEnd = e.NewValue;
         }
+        private void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!(Char.IsDigit(e.Text, 0) || (e.Text == ".")
+               && (!(((TextBox)sender).Text.Contains("."))
+               && e.Text.Length != 0)))
+            {
+                e.Handled = true;
+            }
+        }
+        private void textBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+        }
     }
 
 }
+

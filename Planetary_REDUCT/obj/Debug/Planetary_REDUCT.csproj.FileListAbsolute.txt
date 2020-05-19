@@ -121,3 +121,44 @@ C:\Users\v8926\Documents\4 семестр\ТППИ\Reductor_v2_0\Planetary_reduc
 >>>>>>> 049152967ca807ca8596eec52673838b88e259a7
 D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\RangeSlider.baml
 D:\Институт\4 семестр\Planetary_reductor\Planetary_REDUCT\Planetary_REDUCT\obj\Debug\RangeSlider.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\planetarydb.db
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.exe.config
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.exe
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\Planetary_REDUCT.pdb
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\EntityFramework.dll
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.dll
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Runtime.WindowsRuntime.dll
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\Windows.winmd
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\EntityFramework.xml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.xml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csprojAssemblyReference.cache
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\RangeSlider.baml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\MainWindow.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\OutScreenPage.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\PlanetaryPage.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\RangeSlider.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\StartPageControl.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\WavePage.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\App.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT_MarkupCompile.cache
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT_MarkupCompile.lref
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\MainWindow.baml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\OutScreenPage.baml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\PlanetaryPage.baml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\StartPageControl.baml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\WavePage.baml
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.g.resources
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.Properties.Resources.resources
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.GenerateResource.cache
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.CoreCompileInputs.cache
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.csproj.CopyComplete
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.exe
+C:\Users\Kolichka\Desktop\Новая папка (2)\Planetary_reductor\Planetary_REDUCT\obj\Debug\Planetary_REDUCT.pdb

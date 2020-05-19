@@ -15,6 +15,10 @@
             <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+        <Style TargetType="TextBox">
+            <EventSetter Event="PreviewTextInput" Handler="textBox_PreviewTextInput"></EventSetter>
+            <EventSetter Event="PreviewKeyDown" Handler="textBox_PreviewKeyDown"></EventSetter>
+        </Style>
     </UserControl.Resources>
 
     <Grid >
@@ -63,7 +67,7 @@
             <Label Grid.Row="3" Grid.Column="6" Content="Коэффициент ножки зуба" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             <Label Grid.Row="4" Grid.Column="6" Content="Осевой зазор" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             <Label Grid.Row="2" Grid.Column="6" Content="Параметры исходного контура:" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-            
+
             <TextBox Grid.Row="2" Grid.Column="2" x:Name="Zamin" Width="50" Height="30" Text="{Binding Path=ZaMin, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="2" Grid.Column="4" x:Name="Zamax"  Width="50" Height="30" Text="{Binding Path=ZaMax,Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="3" Grid.Column="2" x:Name="Zgmin" Width="50" Height="30" Text="{Binding Path= ZgMin,Mode=TwoWay}"></TextBox>
