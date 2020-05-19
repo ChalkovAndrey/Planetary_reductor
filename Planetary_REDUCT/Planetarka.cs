@@ -170,12 +170,6 @@ public class Planet:INotifyPropertyChanged
     public void ZTMM46()
     {
 
-
-
-        //ZaMin = 20;ZaMax = 30; ZgMin = 25;ZgMax =50; ZfMin = 22; ZfMax = 40; M1 = 0.5;M2 = 0.5; NMin = 2; NMax = 3; UT = 9; du = 10; ag = 60;
-        //ZaMin = 18; ZaMax = 30; ZgMin = 25; ZgMax = 65; ZfMin = 22; ZfMax = 40; M1 = 0.4; M2 = 0.5; NMin = 2; NMax = 4; UT = 15; du = 7; ag = 60; YD = 0.5; HAZ = 1; CZ = 0.25;
-       // LTR = false;
-
         for (NW = NMin; NW <= NMax; NW++)
         {
             Za = ZaMin;
@@ -202,9 +196,7 @@ public class Planet:INotifyPropertyChanged
                     {
 
                         Zb = (int)(Zf + ((Za + Zg) * M1 / M2));
-                        //if (CheckLTR(Zb, NW)) goto M200vix;
-                       // if (CheckLTR(Zb, Zf)) goto M50;
-
+                       
                         if (Zb / Zf < 1.4) goto M50;// проверка допустимости передаточного отношения ступени f-b
                         if (Zb / Zf > 8) goto M200vix;// проверка допустимости передаточного отношения ступени f-b                    
 

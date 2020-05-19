@@ -188,16 +188,8 @@ namespace Planetary_REDUCT
 
         private void Svol2()
         {
-            //Вспомогательные переменные для svol2
-            int[,] a = new int[11, 5]; // array[1..4, 1..11] of integer ;
-                                       //int j;
-                                       //float qq; //отладочное
-                                       // Определяем массивы
-                                       //int[] n = new int[12] { 0, 806, 808, 809, 811, 812, 815, 818, 822, 824, 830, 836 }; Закомментировал нахуй 19.02.20
-                                       //array[1..11] of integer=(806,808,809,811,812,815,818,822,824,830,836);
-                                       // массив из констант 
-                                       // ВСЕ МАССИВЫ начинаются с 0!!!!!
-
+            
+            int[,] a = new int[11, 5]; 
 
             a[0, 0] = 806;
             a[1, 0] = 808;
@@ -282,19 +274,9 @@ namespace Planetary_REDUCT
 
         private void Svol3()
         {
-            // double  n, kf; //внутренние переменные для svol3
-            //int m;
-            //zf = (Dgp / sm - 5.88 + 1.96 * (haz + cz));
             Zf = (int)Math.Round((Dgp / sm - 5.88 + (1.96 * (haz + cz))), 0);
             Zc = Zf + 2;// добавлено 19.02.20 вместо комментариев
-
-            //-------------------Закомментировано 19.02.20---------------------
-            //kf = Math.Round(zf);
-            //n = kf / 2; // финт ушами для получения четного числа
-            // m = Math.Round(n * 2); Закомментировано 19.02.20
-            //    if (kf-m !=0)	kf--;
             return;
-
         }
 
         // начало SVOL4 - u ip
@@ -331,9 +313,6 @@ namespace Planetary_REDUCT
         {
             double qw = 1.1; double qf = 0.4;
 
-            //массивы начинаются с нуля!
-            //kf,kc - везде заменено на Zf и Zc 19.02.20
-
             az[0] = Math.Round((3 + 0.01 * Zf),2);                          // Xf
             az[1] = Math.Round(az[1] - 1 + qw * (1 + 0.00005 * qf * Zf),2); // Xc
             az[2] = Math.Round(sm * Zf,2);                                  // df
@@ -350,8 +329,6 @@ namespace Planetary_REDUCT
 
         private void Svol6()
         {
-            
-
             ak[0] = Math.Round(sm * (0.5 * Zf + az[0] - (haz + cz)) - 0.5 * Dgp,2);//sigmacz
             ak[1] = Math.Round(0.7 * ak[0],2);  //sigmac
             ak[2] = Math.Round(0.2 * az[2],2);  //
