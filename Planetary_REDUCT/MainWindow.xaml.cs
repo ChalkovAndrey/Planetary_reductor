@@ -84,7 +84,7 @@ namespace Planetary_REDUCT
             PageStyle.Setters.Add(new Setter { Property = Control.HorizontalAlignmentProperty, Value = HorizontalAlignment.Stretch });
             PageStyle.Setters.Add(new Setter { Property = Grid.ColumnProperty, Value = 1 });
 
-            for (int i = 0; i <= 6; i++)
+            for (int i = 0; i <= 2; i++)
             {
                 Image image = new Image();
                 Algoritm.Children.Add(image);
@@ -94,33 +94,23 @@ namespace Planetary_REDUCT
                 CreatePDFpage(image, Convert.ToUInt32(i));
             }
 
-            for (int i = 7; i <= 13; i++)
+            for (int i = 3; i <= 7; i++)
             {
                 Image image = new Image();
                 MathModel.Children.Add(image);
                 MathModel.RowDefinitions.Add(new RowDefinition());
                 image.Style = PageStyle;
-                image.SetValue(Grid.RowProperty, i - 7);
+                image.SetValue(Grid.RowProperty, i - 3);
                 CreatePDFpage(image, Convert.ToUInt32(i));
             }
 
-            for (int i = 14; i <= 20; i++)
+            for (int i = 8; i <= 34; i++)
             {
                 Image image = new Image();
                 ProgramSpecification.Children.Add(image);
                 ProgramSpecification.RowDefinitions.Add(new RowDefinition());
                 image.Style = PageStyle;
-                image.SetValue(Grid.RowProperty, i - 14);
-                CreatePDFpage(image, Convert.ToUInt32(i));
-            }
-
-            for (int i = 21; i <= 27; i++)
-            {
-                Image image = new Image();
-                UserGuide.Children.Add(image);
-                UserGuide.RowDefinitions.Add(new RowDefinition());
-                image.Style = PageStyle;
-                image.SetValue(Grid.RowProperty, i - 21);
+                image.SetValue(Grid.RowProperty, i - 8);
                 CreatePDFpage(image, Convert.ToUInt32(i));
             }
 
